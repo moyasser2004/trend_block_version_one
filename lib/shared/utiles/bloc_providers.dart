@@ -1,34 +1,34 @@
 import 'package:dio/dio.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:trend/shared/utiles/dependancy_injection.dart';
 import 'package:trend/features/add_post/bloc/Add_Post_cubit.dart';
 import 'package:trend/features/add_post/domain/repositories/AddNewPost_Function.dart';
 import 'package:trend/features/authentication/bloc/authentication_bloc.dart';
 import 'package:trend/features/authentication/bloc/authentication_event.dart';
 import 'package:trend/features/authentication/domain/repositories/auth_repository.dart';
 import 'package:trend/features/bottom_nav_bar/Bloc/Bottom_Nav_Bloc.dart';
-import 'package:trend/features/notifications/bloc/notification_bloc.dart';
 import 'package:trend/features/notifications/data/repositories/notification_repository.dart';
 import 'package:trend/features/notifications/domain/usecases/fetch_notifications.dart';
+import 'package:trend/features/notifications/presentation/Manager/NotificationBloc/notification_bloc.dart';
 import 'package:trend/features/posts/data/data_sources/data_remote_source.dart';
 import 'package:trend/features/posts/domain/repositories/post_repository_impl.dart';
 import 'package:trend/features/posts/domain/use_cases/get_posts.dart';
-import '../../features/explore/presentation/manager/explore/explore_bloc.dart';
+import 'package:trend/shared/utiles/dependancy_injection.dart';
+
 import '../../features/explore/presentation/manager/tap_bar/explore_search_tap_bar_bloc.dart';
-import '../../features/notifications/bloc/FollowBack/FollowBackBloc.dart';
-import '../../features/posts/bloc/Bloc_Current_user/Current _user_Bloc.dart';
-import '../../features/posts/bloc/Bloc_post/post_bloc.dart';
-import '../../features/posts/bloc/Bloc_post/post_event.dart';
-import '../../features/profile/All_Bloc/Bloc_BlockAndunBlock/blockandunblock.dart';
-import '../../features/profile/All_Bloc/Bloc_Following/bloc_folllowing.dart';
-import '../../features/profile/All_Bloc/Bloc_get_User/bloc_get.dart';
-import '../../features/profile/All_Bloc/Display_Following_bloc/followers_bloc.dart';
-import '../../features/profile/All_Bloc/Display_followerBloc/followers_bloc.dart';
-import '../../features/profile/All_Bloc/bloc/profile_bloc.dart';
+import '../../features/notifications/presentation/Manager/FollowBack/FollowBackBloc.dart';
+import '../../features/posts/presentation/Manager/Bloc_Current_user/Current _user_Bloc.dart';
+import '../../features/posts/presentation/Manager/Bloc_post/post_bloc.dart';
+import '../../features/posts/presentation/Manager/Bloc_post/post_event.dart';
 import '../../features/profile/data/data_sources/profile_remote_datasource.dart';
 import '../../features/profile/data/models/currentUser.dart';
 import '../../features/profile/domain/repositories/profile_repository.dart';
+import '../../features/profile/presentation/Manager/Bloc_BlockAndunBlock/blockandunblock.dart';
+import '../../features/profile/presentation/Manager/Bloc_Following/bloc_folllowing.dart';
+import '../../features/profile/presentation/Manager/Bloc_get_User/bloc_get.dart';
+import '../../features/profile/presentation/Manager/Display_Following_bloc/followers_bloc.dart';
+import '../../features/profile/presentation/Manager/Display_followerBloc/followers_bloc.dart';
+import '../../features/profile/presentation/Manager/bloc/profile_bloc.dart';
 
 class AppBlocProviders {
   late currentUser user;
@@ -37,8 +37,7 @@ class AppBlocProviders {
     final dio = Dio();
 
     // Repositories
-    final postRepository =
-        PostRepositoryImpl(DataRemoteSource(getIt.get()));
+    final postRepository = PostRepositoryImpl(DataRemoteSource(getIt.get()));
     final profileDataSource = ProfileRemoteDatasource(dio);
     final profileRepository = ProfileRepository(profileDataSource);
     final notificationRepository = NotificationRepository(dio: dio);
@@ -55,25 +54,17 @@ class AppBlocProviders {
         // Authentication Bloc: Handles user authentication, login, logout, and session status.
         BlocProvider<AuthenticationBloc>(
           create: (context) {
-            final bloc =
-                AuthenticationBloc(authApi: AuthenticationApi());
+            final bloc = AuthenticationBloc(authApi: AuthenticationApi());
             bloc.add(AuthenticationCheckStatusEvent());
             return bloc;
           },
         ),
 
-        
         // Post Bloc: Manages posts, including fetching posts and interacting with them.
         BlocProvider<PostBloc>(
           create: (context) => PostBloc(postRepository)
             ..add(FetchPosts()), // Automatically fetch posts
         ),
-
-        // Comment Cubit: Handles state management for comments, including creating and interacting with comments.
-        // BlocProvider<CommentCubit>(
-        //   create: (context) => CommentCubit(),
-        // ),
-        //Add Post
 
         BlocProvider<AddPostBloc>(
           create: (context) => AddPostBloc(addnewpostrepo),
@@ -82,13 +73,12 @@ class AppBlocProviders {
         BlocProvider<BottomNavBloc>(
           create: (context) => BottomNavBloc(),
         ),
-        
+
         // BlocProvider<ExploreBloc>(
         //   create: (context) =>
         //       ExploreBloc(exploreApi: ExploreApi(dio: dio), getPostsUseCase: null),
         // ),
-        
-        
+
         BlocProvider<AddPostBloc>(
           create: (context) => AddPostBloc(addnewpostrepo),
         ),
@@ -106,10 +96,10 @@ class AppBlocProviders {
         ),
         //Following Bloc
         BlocProvider<FollowingBloc>(
-          create: (context) => FollowingBloc(dio, profileRepository),
+          create: (context) => FollowingBloc(profileRepository),
         ),
         BlocProvider<Blockbloc>(
-          create: (context) => Blockbloc(dio),
+          create: (context) => Blockbloc(profileDataSource),
         ),
         BlocProvider<NotificationBloc>(
           create: (context) => NotificationBloc(
@@ -127,20 +117,13 @@ class AppBlocProviders {
         BlocProvider<FollowingbackBloc>(
           create: (context) => FollowingbackBloc(dio, profileRepository),
         ),
-        
-        
-        
-        
-        
-        
+
         BlocProvider<TabBloc>(
           create: (context) => TabBloc(),
         ),
         BlocProvider<PostBloc>(
-          create: (context) =>
-              PostBloc(postRepository)..add(FetchPosts()),
+          create: (context) => PostBloc(postRepository)..add(FetchPosts()),
         ),
-        
       ],
       child: child,
     );

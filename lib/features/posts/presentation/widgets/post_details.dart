@@ -3,11 +3,11 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:trend/features/posts/bloc/Bloc_Current_user/Current%20_user_Bloc.dart';
-import 'package:trend/features/posts/bloc/Bloc_Current_user/Current%20_user_event.dart';
-import 'package:trend/features/posts/bloc/Bloc_post/post_bloc.dart';
-import 'package:trend/features/posts/bloc/Bloc_post/post_event.dart';
 import 'package:trend/features/posts/data/models/post_model.dart';
+import 'package:trend/features/posts/presentation/Manager/Bloc_Current_user/Current%20_user_Bloc.dart';
+import 'package:trend/features/posts/presentation/Manager/Bloc_Current_user/Current%20_user_event.dart';
+import 'package:trend/features/posts/presentation/Manager/Bloc_post/post_bloc.dart';
+import 'package:trend/features/posts/presentation/Manager/Bloc_post/post_event.dart';
 
 import '../../../../shared/core/local/SharedPreferencesDemo.dart';
 

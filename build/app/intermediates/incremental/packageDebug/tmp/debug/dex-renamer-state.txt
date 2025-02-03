@@ -1,10 +1,10 @@
-#Mon Feb 03 14:27:07 EET 2025
-base.0=D\:\\Flutter_block_version_one\\trend_bloc\\trend\\build\\app\\intermediates\\dex\\debug\\mergeExtDexDebug\\classes.dex
-base.1=D\:\\Flutter_block_version_one\\trend_bloc\\trend\\build\\app\\intermediates\\dex\\debug\\mergeLibDexDebug\\0\\classes.dex
-base.2=D\:\\Flutter_block_version_one\\trend_bloc\\trend\\build\\app\\intermediates\\dex\\debug\\mergeProjectDexDebug\\0\\classes.dex
-base.3=D\:\\Flutter_block_version_one\\trend_bloc\\trend\\build\\app\\intermediates\\dex\\debug\\mergeProjectDexDebug\\11\\classes.dex
-base.4=D\:\\Flutter_block_version_one\\trend_bloc\\trend\\build\\app\\intermediates\\dex\\debug\\mergeProjectDexDebug\\1\\classes.dex
-base.5=D\:\\Flutter_block_version_one\\trend_bloc\\trend\\build\\app\\intermediates\\dex\\debug\\mergeExtDexDebug\\classes2.dex
+#Mon Feb 03 16:12:09 EET 2025
+base.0=C\:\\Users\\Options\\Documents\\GitHub\\trend_block_version_one\\build\\app\\intermediates\\dex\\debug\\mergeExtDexDebug\\classes.dex
+base.1=C\:\\Users\\Options\\Documents\\GitHub\\trend_block_version_one\\build\\app\\intermediates\\dex\\debug\\mergeLibDexDebug\\0\\classes.dex
+base.2=C\:\\Users\\Options\\Documents\\GitHub\\trend_block_version_one\\build\\app\\intermediates\\dex\\debug\\mergeProjectDexDebug\\0\\classes.dex
+base.3=C\:\\Users\\Options\\Documents\\GitHub\\trend_block_version_one\\build\\app\\intermediates\\dex\\debug\\mergeProjectDexDebug\\11\\classes.dex
+base.4=C\:\\Users\\Options\\Documents\\GitHub\\trend_block_version_one\\build\\app\\intermediates\\dex\\debug\\mergeProjectDexDebug\\1\\classes.dex
+base.5=C\:\\Users\\Options\\Documents\\GitHub\\trend_block_version_one\\build\\app\\intermediates\\dex\\debug\\mergeExtDexDebug\\classes2.dex
 path.0=classes.dex
 path.1=0/classes.dex
 path.2=0/classes.dex

@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:image_cropper/image_cropper.dart';
 import 'package:image_picker/image_picker.dart';
-import 'package:wechat_assets_picker/wechat_assets_picker.dart';
 import 'package:trend/features/add_post/bloc/AddPostEvent.dart';
 import 'package:trend/features/add_post/bloc/Add_Post_State.dart';
 import 'package:trend/features/add_post/bloc/Add_Post_cubit.dart';
@@ -12,10 +11,11 @@ import 'package:trend/features/add_post/domain/entities/post.dart';
 import 'package:trend/features/add_post/presentation/widgets/textField.dart';
 import 'package:trend/features/bottom_nav_bar/Bloc/Bottom_Nav_Bloc.dart';
 import 'package:trend/features/bottom_nav_bar/Bloc/Bottom_Nav_event.dart';
-import 'package:trend/features/posts/bloc/Bloc_Current_user/Current%20_user_Bloc.dart';
-import 'package:trend/features/posts/bloc/Bloc_Current_user/Current%20_user_event.dart';
-import 'package:trend/features/posts/bloc/Bloc_post/post_bloc.dart';
-import 'package:trend/features/posts/bloc/Bloc_post/post_event.dart';
+import 'package:trend/features/posts/presentation/Manager/Bloc_Current_user/Current%20_user_Bloc.dart';
+import 'package:trend/features/posts/presentation/Manager/Bloc_Current_user/Current%20_user_event.dart';
+import 'package:trend/features/posts/presentation/Manager/Bloc_post/post_bloc.dart';
+import 'package:trend/features/posts/presentation/Manager/Bloc_post/post_event.dart';
+import 'package:wechat_assets_picker/wechat_assets_picker.dart';
 
 import '../../../shared/core/local/SharedPreferencesDemo.dart';
 import '../../../shared/utiles/routes.dart';
@@ -141,22 +141,24 @@ class _AddNewPostPageState extends State<AddNewPostPage> {
                   );
                 } else {
                   return ElevatedButton(
-                    onPressed: (_selectedImage != null && _description.isNotEmpty)
-                        ? () {
-                      context.read<AddPostBloc>().add(
-                        AddNewPostEvent(
-                          NewPost(
-                            fileImage: _selectedImage!,
-                            description: _description,
-                          ),
-                        ),
-                      );
-                    }
-                        : null,
+                    onPressed:
+                        (_selectedImage != null && _description.isNotEmpty)
+                            ? () {
+                                context.read<AddPostBloc>().add(
+                                      AddNewPostEvent(
+                                        NewPost(
+                                          fileImage: _selectedImage!,
+                                          description: _description,
+                                        ),
+                                      ),
+                                    );
+                              }
+                            : null,
                     style: ElevatedButton.styleFrom(
-                      backgroundColor: (_selectedImage != null && _description.isNotEmpty)
-                          ? Colors.black
-                          : Colors.grey[400],
+                      backgroundColor:
+                          (_selectedImage != null && _description.isNotEmpty)
+                              ? Colors.black
+                              : Colors.grey[400],
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(8),
                       ),
@@ -217,24 +219,25 @@ class _AddNewPostPageState extends State<AddNewPostPage> {
               SliverToBoxAdapter(
                 child: (_selectedImage != null)
                     ? Center(
-                  child: InkWell(
-                    onTap: () async {
-                      if (_selectedImage != null) {
-                        final croppedImage = await cropImage(XFile(_selectedImage!.path));
-                        if (croppedImage != null) {
-                          setState(() {
-                            _selectedImage = croppedImage;
-                          });
-                        }
-                      }
-                    },
-                    child: Image.file(
-                      _selectedImage!,
-                      width: MediaQuery.of(context).size.width,
-                      fit: BoxFit.fill,
-                    ),
-                  ),
-                )
+                        child: InkWell(
+                          onTap: () async {
+                            if (_selectedImage != null) {
+                              final croppedImage =
+                                  await cropImage(XFile(_selectedImage!.path));
+                              if (croppedImage != null) {
+                                setState(() {
+                                  _selectedImage = croppedImage;
+                                });
+                              }
+                            }
+                          },
+                          child: Image.file(
+                            _selectedImage!,
+                            width: MediaQuery.of(context).size.width,
+                            fit: BoxFit.fill,
+                          ),
+                        ),
+                      )
                     : const SizedBox.shrink(),
               ),
             ],

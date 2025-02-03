@@ -1,5 +1,6 @@
 import 'package:dartz/dartz.dart';
 import 'package:trend/features/posts/data/data_sources/data_remote_source.dart';
+import 'package:trend/features/posts/data/models/CommentModel.dart';
 import 'package:trend/features/posts/data/models/post_model.dart';
 import 'package:trend/features/posts/domain/repositories/post_repository.dart';
 import 'package:trend/features/profile/domain/repositories/profile_repository.dart';

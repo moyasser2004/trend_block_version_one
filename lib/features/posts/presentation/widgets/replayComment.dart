@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:trend/features/posts/bloc/Bloc_post/post_bloc.dart';
-import 'package:trend/features/posts/bloc/Bloc_post/post_event.dart';
-import 'package:trend/features/posts/data/models/post_model.dart';
+import 'package:trend/features/posts/data/models/CommentModel.dart';
+import 'package:trend/features/posts/presentation/Manager/Bloc_post/post_bloc.dart';
+import 'package:trend/features/posts/presentation/Manager/Bloc_post/post_event.dart';
 import 'package:trend/features/posts/presentation/widgets/Networkimage.dart';
 
 // ignore: must_be_immutable
@@ -61,7 +61,6 @@ class _ReplaycommentState extends State<Replaycomment> {
           size: 20,
         ),
         SizedBox(width: 10.w),
-        // Username and Comment
         Expanded(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,

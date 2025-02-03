@@ -1,13 +1,15 @@
 import 'package:dio/dio.dart';
-import 'package:trend/shared/core/shared_preferences.dart';
+import 'package:trend/features/posts/data/models/CommentModel.dart';
 import 'package:trend/features/posts/data/models/post_model.dart';
 import 'package:trend/features/profile/domain/repositories/profile_repository.dart';
+import 'package:trend/shared/core/shared_preferences.dart';
 
 import '../../../../shared/const/app_links.dart';
 
 class DataRemoteSource {
   Dio dio;
   DataRemoteSource(this.dio);
+
   Future<List<PostModel>> getPostForspecificUserMethod(int id) async {
     try {
       String? tok = await token.getToken();

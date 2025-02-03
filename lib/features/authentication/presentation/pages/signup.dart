@@ -6,13 +6,12 @@ import 'package:trend/features/authentication/bloc/authentication_event.dart';
 import 'package:trend/features/authentication/bloc/authentication_state.dart';
 import 'package:trend/features/authentication/presentation/widgets/custom_button.dart';
 import 'package:trend/features/authentication/presentation/widgets/custom_textfield.dart';
-import 'package:trend/features/notifications/bloc/notification_bloc.dart';
-import 'package:trend/features/posts/bloc/Bloc_Current_user/Current%20_user_Bloc.dart';
-import 'package:trend/features/posts/bloc/Bloc_Current_user/Current%20_user_event.dart';
+import 'package:trend/features/notifications/presentation/Manager/NotificationBloc/notification_bloc.dart';
+import 'package:trend/features/posts/presentation/Manager/Bloc_Current_user/Current%20_user_Bloc.dart';
+import 'package:trend/features/posts/presentation/Manager/Bloc_Current_user/Current%20_user_event.dart';
 
 import '../../../../shared/core/local/SharedPreferencesDemo.dart';
 import '../../../../shared/utiles/routes.dart';
-
 
 class SignupPage extends StatelessWidget {
   SignupPage({super.key});

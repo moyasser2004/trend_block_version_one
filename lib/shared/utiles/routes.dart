@@ -4,10 +4,8 @@ import 'package:trend/features/authentication/presentation/pages/reset_password.
 import 'package:trend/features/authentication/presentation/pages/signup.dart';
 import 'package:trend/features/bottom_nav_bar/bottom_nav_bar.dart';
 import 'package:trend/features/posts/data/models/post_model.dart';
-import 'package:trend/features/posts/presentation/home_page.dart';
-import 'package:trend/features/profile/presentation/user_profile/user_profile.dart';
-
-
+import 'package:trend/features/posts/presentation/Pages/home_page.dart';
+import 'package:trend/features/profile/presentation/Pages/user_profile/user_profile.dart';
 
 class AppRoutes {
   static const String home = '/home';

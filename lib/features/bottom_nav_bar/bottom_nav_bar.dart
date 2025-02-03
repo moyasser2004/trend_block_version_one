@@ -6,9 +6,9 @@ import 'package:trend/features/add_post/presentation/new_post.dart';
 import 'package:trend/features/bottom_nav_bar/Bloc/Bottom_Nav_Bloc.dart';
 import 'package:trend/features/bottom_nav_bar/Bloc/Bottom_Nav_States.dart';
 import 'package:trend/features/bottom_nav_bar/Bloc/Bottom_Nav_event.dart';
-import 'package:trend/features/notifications/presentation/notifications.dart';
-import 'package:trend/features/posts/presentation/home_page.dart';
-import 'package:trend/features/profile/presentation/my_profile/my_profile.dart';
+import 'package:trend/features/notifications/presentation/pages/notifications.dart';
+import 'package:trend/features/posts/presentation/Pages/home_page.dart';
+import 'package:trend/features/profile/presentation/Pages/my_profile/my_profile.dart';
 
 import '../../shared/const/colors.dart';
 import '../explore/presentation/pages/explore_main.dart';

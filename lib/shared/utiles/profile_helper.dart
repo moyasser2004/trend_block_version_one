@@ -3,9 +3,9 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:trend/features/authentication/presentation/pages/login.dart';
-import 'package:trend/features/profile/All_Bloc/bloc/profile_bloc.dart';
-import 'package:trend/features/profile/All_Bloc/bloc/profile_event.dart';
-import 'package:trend/features/profile/All_Bloc/bloc/profile_state.dart';
+import 'package:trend/features/profile/presentation/Manager/bloc/profile_bloc.dart';
+import 'package:trend/features/profile/presentation/Manager/bloc/profile_event.dart';
+import 'package:trend/features/profile/presentation/Manager/bloc/profile_state.dart';
 
 class ProfileHelper {
   static void saveProfile(BuildContext context, int userId, String fullname,
@@ -79,5 +79,36 @@ class ProfileHelper {
         );
       },
     );
+  }
+
+  static String getMentionedNamae(String content) {
+    int firstSpaceIndex = content.indexOf(" ");
+    if (firstSpaceIndex == -1) {
+      return content;
+    }
+    return content.substring(0, firstSpaceIndex);
+  }
+
+  static String getWithoutMentionedNamae(String content) {
+    int firstSpaceIndex = content.indexOf(" ");
+    if (firstSpaceIndex == -1) {
+      return content;
+    }
+    return content.substring(firstSpaceIndex);
+  }
+
+  static String getTimeAgoShort(DateTime createdAt) {
+    final currentTime = DateTime.now();
+    final difference = currentTime.difference(createdAt);
+
+    if (difference.inDays > 0) {
+      return '${difference.inDays}d'; // e.g. "1 d"
+    } else if (difference.inHours > 0) {
+      return '${difference.inHours}h'; // e.g. "5 h"
+    } else if (difference.inMinutes > 0) {
+      return '${difference.inMinutes}m'; // e.g. "10 m"
+    } else {
+      return '${difference.inSeconds}s'; // e.g. "30 s"
+    }
   }
 }
