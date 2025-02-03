@@ -9,6 +9,7 @@ import '../../manager/for_you/for_you_search_bloc.dart';
 import '../../manager/for_you/for_you_search_state.dart';
 import 'explore_explore_post_container.dart';
 
+
 class ExploreSearchForYouPost extends StatelessWidget {
   const ExploreSearchForYouPost({Key? key}) : super(key: key);
 

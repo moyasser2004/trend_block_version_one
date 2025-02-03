@@ -1,11 +1,13 @@
 -- Merging decision tree log ---
 application
-INJECTED from D:\Flutter_block_version_one\trend_bloc\trend\android\app\src\main\AndroidManifest.xml:3:5-36:19
+INJECTED from D:\Flutter_block_version_one\trend_bloc\trend\android\app\src\main\AndroidManifest.xml:6:5-41:19
 INJECTED from D:\Flutter_block_version_one\trend_bloc\trend\android\app\src\debug\AndroidManifest.xml
 MERGED from [:image_picker_android] D:\Flutter_block_version_one\trend_bloc\trend\build\image_picker_android\intermediates\merged_manifest\debug\AndroidManifest.xml:8:5-32:19
 MERGED from [:image_picker_android] D:\Flutter_block_version_one\trend_bloc\trend\build\image_picker_android\intermediates\merged_manifest\debug\AndroidManifest.xml:8:5-32:19
 MERGED from [:share_plus] D:\Flutter_block_version_one\trend_bloc\trend\build\share_plus\intermediates\merged_manifest\debug\AndroidManifest.xml:7:5-33:19
 MERGED from [:share_plus] D:\Flutter_block_version_one\trend_bloc\trend\build\share_plus\intermediates\merged_manifest\debug\AndroidManifest.xml:7:5-33:19
+MERGED from [com.github.bumptech.glide:glide:4.15.1] C:\Users\Mohamed Yasser\.gradle\caches\transforms-3\be869ca6c225a7b816c1000e22a2aeff\transformed\jetified-glide-4.15.1\AndroidManifest.xml:9:5-20
+MERGED from [com.github.bumptech.glide:glide:4.15.1] C:\Users\Mohamed Yasser\.gradle\caches\transforms-3\be869ca6c225a7b816c1000e22a2aeff\transformed\jetified-glide-4.15.1\AndroidManifest.xml:9:5-20
 MERGED from [androidx.emoji2:emoji2:1.2.0] C:\Users\Mohamed Yasser\.gradle\caches\transforms-3\b54c8b34dc2cec64a7baaa02a8a7a5a3\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:23:5-33:19
 MERGED from [androidx.emoji2:emoji2:1.2.0] C:\Users\Mohamed Yasser\.gradle\caches\transforms-3\b54c8b34dc2cec64a7baaa02a8a7a5a3\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:23:5-33:19
 MERGED from [androidx.lifecycle:lifecycle-process:2.7.0] C:\Users\Mohamed Yasser\.gradle\caches\transforms-3\40a1bd5ff2ce65cd1fad055cc690d356\transformed\jetified-lifecycle-process-2.7.0\AndroidManifest.xml:23:5-33:19
@@ -20,6 +22,8 @@ MERGED from [androidx.startup:startup-runtime:1.1.1] C:\Users\Mohamed Yasser\.gr
 MERGED from [androidx.startup:startup-runtime:1.1.1] C:\Users\Mohamed Yasser\.gradle\caches\transforms-3\a1fd92b89d0c194f8fe8fdca4d20e2ee\transformed\jetified-startup-runtime-1.1.1\AndroidManifest.xml:25:5-31:19
 MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\Mohamed Yasser\.gradle\caches\transforms-3\d21e37b6169caa7895fc002c1192b0f1\transformed\versionedparcelable-1.1.1\AndroidManifest.xml:24:5-25:19
 MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\Mohamed Yasser\.gradle\caches\transforms-3\d21e37b6169caa7895fc002c1192b0f1\transformed\versionedparcelable-1.1.1\AndroidManifest.xml:24:5-25:19
+MERGED from [com.github.bumptech.glide:gifdecoder:4.15.1] C:\Users\Mohamed Yasser\.gradle\caches\transforms-3\feb0716953526e738e4832a976d79f92\transformed\jetified-gifdecoder-4.15.1\AndroidManifest.xml:9:5-20
+MERGED from [com.github.bumptech.glide:gifdecoder:4.15.1] C:\Users\Mohamed Yasser\.gradle\caches\transforms-3\feb0716953526e738e4832a976d79f92\transformed\jetified-gifdecoder-4.15.1\AndroidManifest.xml:9:5-20
 	android:extractNativeLibs
 		INJECTED from D:\Flutter_block_version_one\trend_bloc\trend\android\app\src\debug\AndroidManifest.xml
 	android:appComponentFactory
@@ -27,8 +31,8 @@ MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\Mo
 	android:name
 		INJECTED from D:\Flutter_block_version_one\trend_bloc\trend\android\app\src\main\AndroidManifest.xml
 manifest
-ADDED from D:\Flutter_block_version_one\trend_bloc\trend\android\app\src\main\AndroidManifest.xml:1:1-48:12
-MERGED from D:\Flutter_block_version_one\trend_bloc\trend\android\app\src\main\AndroidManifest.xml:1:1-48:12
+ADDED from D:\Flutter_block_version_one\trend_bloc\trend\android\app\src\main\AndroidManifest.xml:1:1-50:12
+MERGED from D:\Flutter_block_version_one\trend_bloc\trend\android\app\src\main\AndroidManifest.xml:1:1-50:12
 INJECTED from D:\Flutter_block_version_one\trend_bloc\trend\android\app\src\debug\AndroidManifest.xml:1:1-7:12
 INJECTED from D:\Flutter_block_version_one\trend_bloc\trend\android\app\src\debug\AndroidManifest.xml:1:1-7:12
 INJECTED from D:\Flutter_block_version_one\trend_bloc\trend\android\app\src\debug\AndroidManifest.xml:1:1-7:12
@@ -36,11 +40,15 @@ MERGED from [:image_picker_android] D:\Flutter_block_version_one\trend_bloc\tren
 MERGED from [:flutter_plugin_android_lifecycle] D:\Flutter_block_version_one\trend_bloc\trend\build\flutter_plugin_android_lifecycle\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-7:12
 MERGED from [:fluttertoast] D:\Flutter_block_version_one\trend_bloc\trend\build\fluttertoast\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-7:12
 MERGED from [:image_cropper] D:\Flutter_block_version_one\trend_bloc\trend\build\image_cropper\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-7:12
+MERGED from [:insta_assets_crop] D:\Flutter_block_version_one\trend_bloc\trend\build\insta_assets_crop\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-10:12
 MERGED from [:path_provider_android] D:\Flutter_block_version_one\trend_bloc\trend\build\path_provider_android\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-7:12
+MERGED from [:photo_manager] D:\Flutter_block_version_one\trend_bloc\trend\build\photo_manager\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-11:12
 MERGED from [:share_plus] D:\Flutter_block_version_one\trend_bloc\trend\build\share_plus\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-35:12
 MERGED from [:shared_preferences_android] D:\Flutter_block_version_one\trend_bloc\trend\build\shared_preferences_android\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-7:12
 MERGED from [:sqflite_android] D:\Flutter_block_version_one\trend_bloc\trend\build\sqflite_android\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-7:12
+MERGED from [:video_player_android] D:\Flutter_block_version_one\trend_bloc\trend\build\video_player_android\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-7:12
 MERGED from [androidx.preference:preference:1.2.1] C:\Users\Mohamed Yasser\.gradle\caches\transforms-3\047aa7ddff6241681155a5178fa0e58d\transformed\preference-1.2.1\AndroidManifest.xml:17:1-24:12
+MERGED from [com.github.bumptech.glide:glide:4.15.1] C:\Users\Mohamed Yasser\.gradle\caches\transforms-3\be869ca6c225a7b816c1000e22a2aeff\transformed\jetified-glide-4.15.1\AndroidManifest.xml:2:1-11:12
 MERGED from [com.github.yalantis:ucrop:2.2.10] C:\Users\Mohamed Yasser\.gradle\caches\transforms-3\36331ed7e73d989b67f18cc56e47c317\transformed\jetified-ucrop-2.2.10\AndroidManifest.xml:2:1-7:12
 MERGED from [androidx.appcompat:appcompat-resources:1.6.1] C:\Users\Mohamed Yasser\.gradle\caches\transforms-3\9b797759c9b54ab0b27bb9b4753d9cda\transformed\jetified-appcompat-resources-1.6.1\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.appcompat:appcompat:1.6.1] C:\Users\Mohamed Yasser\.gradle\caches\transforms-3\f3e01c95a04b87be1a2f2ed87103c6d5\transformed\appcompat-1.6.1\AndroidManifest.xml:17:1-22:12
@@ -66,6 +74,17 @@ MERGED from [androidx.savedstate:savedstate-ktx:1.2.1] C:\Users\Mohamed Yasser\.
 MERGED from [androidx.savedstate:savedstate:1.2.1] C:\Users\Mohamed Yasser\.gradle\caches\transforms-3\40a45e686cd0e99ac2a33b1453f47939\transformed\jetified-savedstate-1.2.1\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.7.0] C:\Users\Mohamed Yasser\.gradle\caches\transforms-3\2b2bf4b21be1acb6d8aafc6e5e4bedac\transformed\jetified-lifecycle-viewmodel-savedstate-2.7.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.core:core-ktx:1.13.1] C:\Users\Mohamed Yasser\.gradle\caches\transforms-3\8b9f2b08a8ef59d66d7e2f702c5ee30e\transformed\jetified-core-ktx-1.13.1\AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.media3:media3-extractor:1.4.1] C:\Users\Mohamed Yasser\.gradle\caches\transforms-3\0c1e74314e2e2fac66666c2d6213ef92\transformed\jetified-media3-extractor-1.4.1\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.media3:media3-container:1.4.1] C:\Users\Mohamed Yasser\.gradle\caches\transforms-3\755276042b4bf42d417e74e6e24571c4\transformed\jetified-media3-container-1.4.1\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.media3:media3-datasource:1.4.1] C:\Users\Mohamed Yasser\.gradle\caches\transforms-3\061ff3df240c20ee7104e5fdf7b7b53a\transformed\jetified-media3-datasource-1.4.1\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.media3:media3-decoder:1.4.1] C:\Users\Mohamed Yasser\.gradle\caches\transforms-3\2555afd3fac631698e2505c323605a33\transformed\jetified-media3-decoder-1.4.1\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.media3:media3-database:1.4.1] C:\Users\Mohamed Yasser\.gradle\caches\transforms-3\41d11fe6aa00ae60723c07f4ebd2d045\transformed\jetified-media3-database-1.4.1\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.media3:media3-common:1.4.1] C:\Users\Mohamed Yasser\.gradle\caches\transforms-3\ea763f08590e45b5a76c25471423bc7a\transformed\jetified-media3-common-1.4.1\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.media3:media3-exoplayer-hls:1.4.1] C:\Users\Mohamed Yasser\.gradle\caches\transforms-3\5dd2666800801e069b27e91f47bb9e3c\transformed\jetified-media3-exoplayer-hls-1.4.1\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.media3:media3-exoplayer-dash:1.4.1] C:\Users\Mohamed Yasser\.gradle\caches\transforms-3\5b49b2dbc224a2a544a6772c46320d00\transformed\jetified-media3-exoplayer-dash-1.4.1\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.media3:media3-exoplayer-rtsp:1.4.1] C:\Users\Mohamed Yasser\.gradle\caches\transforms-3\fe8b171bf181c63f18ad0e371afa3a1d\transformed\jetified-media3-exoplayer-rtsp-1.4.1\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.media3:media3-exoplayer-smoothstreaming:1.4.1] C:\Users\Mohamed Yasser\.gradle\caches\transforms-3\b41869c3b0e78fa42685142a5fa3303b\transformed\jetified-media3-exoplayer-smoothstreaming-1.4.1\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.media3:media3-exoplayer:1.4.1] C:\Users\Mohamed Yasser\.gradle\caches\transforms-3\d61e896a1291a8958fc90251d79de4b7\transformed\jetified-media3-exoplayer-1.4.1\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.slidingpanelayout:slidingpanelayout:1.2.0] C:\Users\Mohamed Yasser\.gradle\caches\transforms-3\a499fa3c34a38edcfdea6b351554e382\transformed\slidingpanelayout-1.2.0\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.window:window:1.2.0] C:\Users\Mohamed Yasser\.gradle\caches\transforms-3\8859fd2468ade3ef2655d1f63d6737f2\transformed\jetified-window-1.2.0\AndroidManifest.xml:17:1-31:12
 MERGED from [androidx.window:window-java:1.2.0] C:\Users\Mohamed Yasser\.gradle\caches\transforms-3\8a650b2c5ea333036303d473a939db42\transformed\jetified-window-java-1.2.0\AndroidManifest.xml:17:1-21:12
@@ -85,6 +104,7 @@ MERGED from [androidx.startup:startup-runtime:1.1.1] C:\Users\Mohamed Yasser\.gr
 MERGED from [androidx.tracing:tracing:1.2.0] C:\Users\Mohamed Yasser\.gradle\caches\transforms-3\e896b9ac412a8814559a776dc7b5a420\transformed\jetified-tracing-1.2.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.interpolator:interpolator:1.0.0] C:\Users\Mohamed Yasser\.gradle\caches\transforms-3\1122d081a937e71194adcd50d186ca4f\transformed\interpolator-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\Mohamed Yasser\.gradle\caches\transforms-3\d21e37b6169caa7895fc002c1192b0f1\transformed\versionedparcelable-1.1.1\AndroidManifest.xml:17:1-27:12
+MERGED from [com.github.bumptech.glide:gifdecoder:4.15.1] C:\Users\Mohamed Yasser\.gradle\caches\transforms-3\feb0716953526e738e4832a976d79f92\transformed\jetified-gifdecoder-4.15.1\AndroidManifest.xml:2:1-11:12
 MERGED from [androidx.datastore:datastore-core-android:1.1.1] C:\Users\Mohamed Yasser\.gradle\caches\transforms-3\9441e8b274faebbfe21cf8c8f463be95\transformed\jetified-datastore-core-release\AndroidManifest.xml:2:1-7:12
 MERGED from [androidx.datastore:datastore-preferences-android:1.1.1] C:\Users\Mohamed Yasser\.gradle\caches\transforms-3\0cf0dfa47f40d2ebd3407bd47f3dd25e\transformed\jetified-datastore-preferences-release\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.datastore:datastore-android:1.1.1] C:\Users\Mohamed Yasser\.gradle\caches\transforms-3\e3611af684c8af9ba655b32249084f4e\transformed\jetified-datastore-release\AndroidManifest.xml:17:1-22:12
@@ -105,23 +125,31 @@ MERGED from [com.getkeepsafe.relinker:relinker:1.4.5] C:\Users\Mohamed Yasser\.g
 	xmlns:android
 		ADDED from D:\Flutter_block_version_one\trend_bloc\trend\android\app\src\main\AndroidManifest.xml:1:11-69
 uses-permission#android.permission.INTERNET
-ADDED from D:\Flutter_block_version_one\trend_bloc\trend\android\app\src\main\AndroidManifest.xml:2:2-64
-MERGED from D:\Flutter_block_version_one\trend_bloc\trend\android\app\src\main\AndroidManifest.xml:2:2-64
-MERGED from D:\Flutter_block_version_one\trend_bloc\trend\android\app\src\main\AndroidManifest.xml:2:2-64
+ADDED from D:\Flutter_block_version_one\trend_bloc\trend\android\app\src\main\AndroidManifest.xml:2:5-67
+MERGED from D:\Flutter_block_version_one\trend_bloc\trend\android\app\src\main\AndroidManifest.xml:2:5-67
+MERGED from D:\Flutter_block_version_one\trend_bloc\trend\android\app\src\main\AndroidManifest.xml:2:5-67
 	android:name
-		ADDED from D:\Flutter_block_version_one\trend_bloc\trend\android\app\src\main\AndroidManifest.xml:2:19-61
+		ADDED from D:\Flutter_block_version_one\trend_bloc\trend\android\app\src\main\AndroidManifest.xml:2:22-64
+uses-permission#android.permission.CAMERA
+ADDED from D:\Flutter_block_version_one\trend_bloc\trend\android\app\src\main\AndroidManifest.xml:3:5-65
+	android:name
+		ADDED from D:\Flutter_block_version_one\trend_bloc\trend\android\app\src\main\AndroidManifest.xml:3:22-62
+uses-permission#android.permission.READ_MEDIA_IMAGES
+ADDED from D:\Flutter_block_version_one\trend_bloc\trend\android\app\src\main\AndroidManifest.xml:4:5-76
+	android:name
+		ADDED from D:\Flutter_block_version_one\trend_bloc\trend\android\app\src\main\AndroidManifest.xml:4:22-73
 queries
-ADDED from D:\Flutter_block_version_one\trend_bloc\trend\android\app\src\main\AndroidManifest.xml:42:5-47:15
+ADDED from D:\Flutter_block_version_one\trend_bloc\trend\android\app\src\main\AndroidManifest.xml:44:5-49:15
 intent#action:name:android.intent.action.PROCESS_TEXT+data:mimeType:text/plain
-ADDED from D:\Flutter_block_version_one\trend_bloc\trend\android\app\src\main\AndroidManifest.xml:43:9-46:18
+ADDED from D:\Flutter_block_version_one\trend_bloc\trend\android\app\src\main\AndroidManifest.xml:45:9-48:18
 action#android.intent.action.PROCESS_TEXT
-ADDED from D:\Flutter_block_version_one\trend_bloc\trend\android\app\src\main\AndroidManifest.xml:44:13-72
+ADDED from D:\Flutter_block_version_one\trend_bloc\trend\android\app\src\main\AndroidManifest.xml:46:13-72
 	android:name
-		ADDED from D:\Flutter_block_version_one\trend_bloc\trend\android\app\src\main\AndroidManifest.xml:44:21-70
+		ADDED from D:\Flutter_block_version_one\trend_bloc\trend\android\app\src\main\AndroidManifest.xml:46:21-70
 data
-ADDED from D:\Flutter_block_version_one\trend_bloc\trend\android\app\src\main\AndroidManifest.xml:45:13-50
+ADDED from D:\Flutter_block_version_one\trend_bloc\trend\android\app\src\main\AndroidManifest.xml:47:13-50
 	android:mimeType
-		ADDED from D:\Flutter_block_version_one\trend_bloc\trend\android\app\src\main\AndroidManifest.xml:45:19-48
+		ADDED from D:\Flutter_block_version_one\trend_bloc\trend\android\app\src\main\AndroidManifest.xml:47:19-48
 uses-sdk
 INJECTED from D:\Flutter_block_version_one\trend_bloc\trend\android\app\src\debug\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from D:\Flutter_block_version_one\trend_bloc\trend\android\app\src\debug\AndroidManifest.xml
@@ -134,16 +162,24 @@ MERGED from [:fluttertoast] D:\Flutter_block_version_one\trend_bloc\trend\build\
 MERGED from [:fluttertoast] D:\Flutter_block_version_one\trend_bloc\trend\build\fluttertoast\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-44
 MERGED from [:image_cropper] D:\Flutter_block_version_one\trend_bloc\trend\build\image_cropper\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-44
 MERGED from [:image_cropper] D:\Flutter_block_version_one\trend_bloc\trend\build\image_cropper\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-44
+MERGED from [:insta_assets_crop] D:\Flutter_block_version_one\trend_bloc\trend\build\insta_assets_crop\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-44
+MERGED from [:insta_assets_crop] D:\Flutter_block_version_one\trend_bloc\trend\build\insta_assets_crop\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-44
 MERGED from [:path_provider_android] D:\Flutter_block_version_one\trend_bloc\trend\build\path_provider_android\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-44
 MERGED from [:path_provider_android] D:\Flutter_block_version_one\trend_bloc\trend\build\path_provider_android\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-44
+MERGED from [:photo_manager] D:\Flutter_block_version_one\trend_bloc\trend\build\photo_manager\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-44
+MERGED from [:photo_manager] D:\Flutter_block_version_one\trend_bloc\trend\build\photo_manager\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-44
 MERGED from [:share_plus] D:\Flutter_block_version_one\trend_bloc\trend\build\share_plus\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-44
 MERGED from [:share_plus] D:\Flutter_block_version_one\trend_bloc\trend\build\share_plus\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-44
 MERGED from [:shared_preferences_android] D:\Flutter_block_version_one\trend_bloc\trend\build\shared_preferences_android\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-44
 MERGED from [:shared_preferences_android] D:\Flutter_block_version_one\trend_bloc\trend\build\shared_preferences_android\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-44
 MERGED from [:sqflite_android] D:\Flutter_block_version_one\trend_bloc\trend\build\sqflite_android\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-44
 MERGED from [:sqflite_android] D:\Flutter_block_version_one\trend_bloc\trend\build\sqflite_android\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-44
+MERGED from [:video_player_android] D:\Flutter_block_version_one\trend_bloc\trend\build\video_player_android\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-44
+MERGED from [:video_player_android] D:\Flutter_block_version_one\trend_bloc\trend\build\video_player_android\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-44
 MERGED from [androidx.preference:preference:1.2.1] C:\Users\Mohamed Yasser\.gradle\caches\transforms-3\047aa7ddff6241681155a5178fa0e58d\transformed\preference-1.2.1\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.preference:preference:1.2.1] C:\Users\Mohamed Yasser\.gradle\caches\transforms-3\047aa7ddff6241681155a5178fa0e58d\transformed\preference-1.2.1\AndroidManifest.xml:20:5-22:41
+MERGED from [com.github.bumptech.glide:glide:4.15.1] C:\Users\Mohamed Yasser\.gradle\caches\transforms-3\be869ca6c225a7b816c1000e22a2aeff\transformed\jetified-glide-4.15.1\AndroidManifest.xml:5:5-7:41
+MERGED from [com.github.bumptech.glide:glide:4.15.1] C:\Users\Mohamed Yasser\.gradle\caches\transforms-3\be869ca6c225a7b816c1000e22a2aeff\transformed\jetified-glide-4.15.1\AndroidManifest.xml:5:5-7:41
 MERGED from [com.github.yalantis:ucrop:2.2.10] C:\Users\Mohamed Yasser\.gradle\caches\transforms-3\36331ed7e73d989b67f18cc56e47c317\transformed\jetified-ucrop-2.2.10\AndroidManifest.xml:5:5-44
 MERGED from [com.github.yalantis:ucrop:2.2.10] C:\Users\Mohamed Yasser\.gradle\caches\transforms-3\36331ed7e73d989b67f18cc56e47c317\transformed\jetified-ucrop-2.2.10\AndroidManifest.xml:5:5-44
 MERGED from [androidx.appcompat:appcompat-resources:1.6.1] C:\Users\Mohamed Yasser\.gradle\caches\transforms-3\9b797759c9b54ab0b27bb9b4753d9cda\transformed\jetified-appcompat-resources-1.6.1\AndroidManifest.xml:20:5-44
@@ -194,6 +230,28 @@ MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.7.0] C:\Users\M
 MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.7.0] C:\Users\Mohamed Yasser\.gradle\caches\transforms-3\2b2bf4b21be1acb6d8aafc6e5e4bedac\transformed\jetified-lifecycle-viewmodel-savedstate-2.7.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.core:core-ktx:1.13.1] C:\Users\Mohamed Yasser\.gradle\caches\transforms-3\8b9f2b08a8ef59d66d7e2f702c5ee30e\transformed\jetified-core-ktx-1.13.1\AndroidManifest.xml:5:5-44
 MERGED from [androidx.core:core-ktx:1.13.1] C:\Users\Mohamed Yasser\.gradle\caches\transforms-3\8b9f2b08a8ef59d66d7e2f702c5ee30e\transformed\jetified-core-ktx-1.13.1\AndroidManifest.xml:5:5-44
+MERGED from [androidx.media3:media3-extractor:1.4.1] C:\Users\Mohamed Yasser\.gradle\caches\transforms-3\0c1e74314e2e2fac66666c2d6213ef92\transformed\jetified-media3-extractor-1.4.1\AndroidManifest.xml:20:5-44
+MERGED from [androidx.media3:media3-extractor:1.4.1] C:\Users\Mohamed Yasser\.gradle\caches\transforms-3\0c1e74314e2e2fac66666c2d6213ef92\transformed\jetified-media3-extractor-1.4.1\AndroidManifest.xml:20:5-44
+MERGED from [androidx.media3:media3-container:1.4.1] C:\Users\Mohamed Yasser\.gradle\caches\transforms-3\755276042b4bf42d417e74e6e24571c4\transformed\jetified-media3-container-1.4.1\AndroidManifest.xml:20:5-44
+MERGED from [androidx.media3:media3-container:1.4.1] C:\Users\Mohamed Yasser\.gradle\caches\transforms-3\755276042b4bf42d417e74e6e24571c4\transformed\jetified-media3-container-1.4.1\AndroidManifest.xml:20:5-44
+MERGED from [androidx.media3:media3-datasource:1.4.1] C:\Users\Mohamed Yasser\.gradle\caches\transforms-3\061ff3df240c20ee7104e5fdf7b7b53a\transformed\jetified-media3-datasource-1.4.1\AndroidManifest.xml:20:5-44
+MERGED from [androidx.media3:media3-datasource:1.4.1] C:\Users\Mohamed Yasser\.gradle\caches\transforms-3\061ff3df240c20ee7104e5fdf7b7b53a\transformed\jetified-media3-datasource-1.4.1\AndroidManifest.xml:20:5-44
+MERGED from [androidx.media3:media3-decoder:1.4.1] C:\Users\Mohamed Yasser\.gradle\caches\transforms-3\2555afd3fac631698e2505c323605a33\transformed\jetified-media3-decoder-1.4.1\AndroidManifest.xml:20:5-44
+MERGED from [androidx.media3:media3-decoder:1.4.1] C:\Users\Mohamed Yasser\.gradle\caches\transforms-3\2555afd3fac631698e2505c323605a33\transformed\jetified-media3-decoder-1.4.1\AndroidManifest.xml:20:5-44
+MERGED from [androidx.media3:media3-database:1.4.1] C:\Users\Mohamed Yasser\.gradle\caches\transforms-3\41d11fe6aa00ae60723c07f4ebd2d045\transformed\jetified-media3-database-1.4.1\AndroidManifest.xml:20:5-44
+MERGED from [androidx.media3:media3-database:1.4.1] C:\Users\Mohamed Yasser\.gradle\caches\transforms-3\41d11fe6aa00ae60723c07f4ebd2d045\transformed\jetified-media3-database-1.4.1\AndroidManifest.xml:20:5-44
+MERGED from [androidx.media3:media3-common:1.4.1] C:\Users\Mohamed Yasser\.gradle\caches\transforms-3\ea763f08590e45b5a76c25471423bc7a\transformed\jetified-media3-common-1.4.1\AndroidManifest.xml:20:5-44
+MERGED from [androidx.media3:media3-common:1.4.1] C:\Users\Mohamed Yasser\.gradle\caches\transforms-3\ea763f08590e45b5a76c25471423bc7a\transformed\jetified-media3-common-1.4.1\AndroidManifest.xml:20:5-44
+MERGED from [androidx.media3:media3-exoplayer-hls:1.4.1] C:\Users\Mohamed Yasser\.gradle\caches\transforms-3\5dd2666800801e069b27e91f47bb9e3c\transformed\jetified-media3-exoplayer-hls-1.4.1\AndroidManifest.xml:20:5-44
+MERGED from [androidx.media3:media3-exoplayer-hls:1.4.1] C:\Users\Mohamed Yasser\.gradle\caches\transforms-3\5dd2666800801e069b27e91f47bb9e3c\transformed\jetified-media3-exoplayer-hls-1.4.1\AndroidManifest.xml:20:5-44
+MERGED from [androidx.media3:media3-exoplayer-dash:1.4.1] C:\Users\Mohamed Yasser\.gradle\caches\transforms-3\5b49b2dbc224a2a544a6772c46320d00\transformed\jetified-media3-exoplayer-dash-1.4.1\AndroidManifest.xml:20:5-44
+MERGED from [androidx.media3:media3-exoplayer-dash:1.4.1] C:\Users\Mohamed Yasser\.gradle\caches\transforms-3\5b49b2dbc224a2a544a6772c46320d00\transformed\jetified-media3-exoplayer-dash-1.4.1\AndroidManifest.xml:20:5-44
+MERGED from [androidx.media3:media3-exoplayer-rtsp:1.4.1] C:\Users\Mohamed Yasser\.gradle\caches\transforms-3\fe8b171bf181c63f18ad0e371afa3a1d\transformed\jetified-media3-exoplayer-rtsp-1.4.1\AndroidManifest.xml:20:5-44
+MERGED from [androidx.media3:media3-exoplayer-rtsp:1.4.1] C:\Users\Mohamed Yasser\.gradle\caches\transforms-3\fe8b171bf181c63f18ad0e371afa3a1d\transformed\jetified-media3-exoplayer-rtsp-1.4.1\AndroidManifest.xml:20:5-44
+MERGED from [androidx.media3:media3-exoplayer-smoothstreaming:1.4.1] C:\Users\Mohamed Yasser\.gradle\caches\transforms-3\b41869c3b0e78fa42685142a5fa3303b\transformed\jetified-media3-exoplayer-smoothstreaming-1.4.1\AndroidManifest.xml:20:5-44
+MERGED from [androidx.media3:media3-exoplayer-smoothstreaming:1.4.1] C:\Users\Mohamed Yasser\.gradle\caches\transforms-3\b41869c3b0e78fa42685142a5fa3303b\transformed\jetified-media3-exoplayer-smoothstreaming-1.4.1\AndroidManifest.xml:20:5-44
+MERGED from [androidx.media3:media3-exoplayer:1.4.1] C:\Users\Mohamed Yasser\.gradle\caches\transforms-3\d61e896a1291a8958fc90251d79de4b7\transformed\jetified-media3-exoplayer-1.4.1\AndroidManifest.xml:20:5-44
+MERGED from [androidx.media3:media3-exoplayer:1.4.1] C:\Users\Mohamed Yasser\.gradle\caches\transforms-3\d61e896a1291a8958fc90251d79de4b7\transformed\jetified-media3-exoplayer-1.4.1\AndroidManifest.xml:20:5-44
 MERGED from [androidx.slidingpanelayout:slidingpanelayout:1.2.0] C:\Users\Mohamed Yasser\.gradle\caches\transforms-3\a499fa3c34a38edcfdea6b351554e382\transformed\slidingpanelayout-1.2.0\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.slidingpanelayout:slidingpanelayout:1.2.0] C:\Users\Mohamed Yasser\.gradle\caches\transforms-3\a499fa3c34a38edcfdea6b351554e382\transformed\slidingpanelayout-1.2.0\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.window:window:1.2.0] C:\Users\Mohamed Yasser\.gradle\caches\transforms-3\8859fd2468ade3ef2655d1f63d6737f2\transformed\jetified-window-1.2.0\AndroidManifest.xml:20:5-44
@@ -232,6 +290,8 @@ MERGED from [androidx.interpolator:interpolator:1.0.0] C:\Users\Mohamed Yasser\.
 MERGED from [androidx.interpolator:interpolator:1.0.0] C:\Users\Mohamed Yasser\.gradle\caches\transforms-3\1122d081a937e71194adcd50d186ca4f\transformed\interpolator-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\Mohamed Yasser\.gradle\caches\transforms-3\d21e37b6169caa7895fc002c1192b0f1\transformed\versionedparcelable-1.1.1\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\Mohamed Yasser\.gradle\caches\transforms-3\d21e37b6169caa7895fc002c1192b0f1\transformed\versionedparcelable-1.1.1\AndroidManifest.xml:20:5-22:41
+MERGED from [com.github.bumptech.glide:gifdecoder:4.15.1] C:\Users\Mohamed Yasser\.gradle\caches\transforms-3\feb0716953526e738e4832a976d79f92\transformed\jetified-gifdecoder-4.15.1\AndroidManifest.xml:5:5-7:41
+MERGED from [com.github.bumptech.glide:gifdecoder:4.15.1] C:\Users\Mohamed Yasser\.gradle\caches\transforms-3\feb0716953526e738e4832a976d79f92\transformed\jetified-gifdecoder-4.15.1\AndroidManifest.xml:5:5-7:41
 MERGED from [androidx.datastore:datastore-core-android:1.1.1] C:\Users\Mohamed Yasser\.gradle\caches\transforms-3\9441e8b274faebbfe21cf8c8f463be95\transformed\jetified-datastore-core-release\AndroidManifest.xml:5:5-44
 MERGED from [androidx.datastore:datastore-core-android:1.1.1] C:\Users\Mohamed Yasser\.gradle\caches\transforms-3\9441e8b274faebbfe21cf8c8f463be95\transformed\jetified-datastore-core-release\AndroidManifest.xml:5:5-44
 MERGED from [androidx.datastore:datastore-preferences-android:1.1.1] C:\Users\Mohamed Yasser\.gradle\caches\transforms-3\0cf0dfa47f40d2ebd3407bd47f3dd25e\transformed\jetified-datastore-preferences-release\AndroidManifest.xml:20:5-44
@@ -296,6 +356,18 @@ ADDED from [:image_picker_android] D:\Flutter_block_version_one\trend_bloc\trend
 		ADDED from [:image_picker_android] D:\Flutter_block_version_one\trend_bloc\trend\build\image_picker_android\intermediates\merged_manifest\debug\AndroidManifest.xml:30:17-33
 	android:name
 		ADDED from [:image_picker_android] D:\Flutter_block_version_one\trend_bloc\trend\build\image_picker_android\intermediates\merged_manifest\debug\AndroidManifest.xml:29:17-63
+uses-permission#android.permission.READ_EXTERNAL_STORAGE
+ADDED from [:insta_assets_crop] D:\Flutter_block_version_one\trend_bloc\trend\build\insta_assets_crop\intermediates\merged_manifest\debug\AndroidManifest.xml:7:5-80
+MERGED from [:photo_manager] D:\Flutter_block_version_one\trend_bloc\trend\build\photo_manager\intermediates\merged_manifest\debug\AndroidManifest.xml:7:5-9:38
+MERGED from [:photo_manager] D:\Flutter_block_version_one\trend_bloc\trend\build\photo_manager\intermediates\merged_manifest\debug\AndroidManifest.xml:7:5-9:38
+	android:maxSdkVersion
+		ADDED from [:photo_manager] D:\Flutter_block_version_one\trend_bloc\trend\build\photo_manager\intermediates\merged_manifest\debug\AndroidManifest.xml:9:9-35
+	android:name
+		ADDED from [:insta_assets_crop] D:\Flutter_block_version_one\trend_bloc\trend\build\insta_assets_crop\intermediates\merged_manifest\debug\AndroidManifest.xml:7:22-77
+uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
+ADDED from [:insta_assets_crop] D:\Flutter_block_version_one\trend_bloc\trend\build\insta_assets_crop\intermediates\merged_manifest\debug\AndroidManifest.xml:8:5-81
+	android:name
+		ADDED from [:insta_assets_crop] D:\Flutter_block_version_one\trend_bloc\trend\build\insta_assets_crop\intermediates\merged_manifest\debug\AndroidManifest.xml:8:22-78
 provider#dev.fluttercommunity.plus.share.ShareFileProvider
 ADDED from [:share_plus] D:\Flutter_block_version_one\trend_bloc\trend\build\share_plus\intermediates\merged_manifest\debug\AndroidManifest.xml:13:9-21:20
 	android:grantUriPermissions
@@ -346,6 +418,12 @@ ADDED from [androidx.lifecycle:lifecycle-process:2.7.0] C:\Users\Mohamed Yasser\
 		ADDED from [androidx.lifecycle:lifecycle-process:2.7.0] C:\Users\Mohamed Yasser\.gradle\caches\transforms-3\40a1bd5ff2ce65cd1fad055cc690d356\transformed\jetified-lifecycle-process-2.7.0\AndroidManifest.xml:31:17-49
 	android:name
 		ADDED from [androidx.lifecycle:lifecycle-process:2.7.0] C:\Users\Mohamed Yasser\.gradle\caches\transforms-3\40a1bd5ff2ce65cd1fad055cc690d356\transformed\jetified-lifecycle-process-2.7.0\AndroidManifest.xml:30:17-78
+uses-permission#android.permission.ACCESS_NETWORK_STATE
+ADDED from [androidx.media3:media3-common:1.4.1] C:\Users\Mohamed Yasser\.gradle\caches\transforms-3\ea763f08590e45b5a76c25471423bc7a\transformed\jetified-media3-common-1.4.1\AndroidManifest.xml:22:5-79
+MERGED from [androidx.media3:media3-exoplayer:1.4.1] C:\Users\Mohamed Yasser\.gradle\caches\transforms-3\d61e896a1291a8958fc90251d79de4b7\transformed\jetified-media3-exoplayer-1.4.1\AndroidManifest.xml:22:5-79
+MERGED from [androidx.media3:media3-exoplayer:1.4.1] C:\Users\Mohamed Yasser\.gradle\caches\transforms-3\d61e896a1291a8958fc90251d79de4b7\transformed\jetified-media3-exoplayer-1.4.1\AndroidManifest.xml:22:5-79
+	android:name
+		ADDED from [androidx.media3:media3-common:1.4.1] C:\Users\Mohamed Yasser\.gradle\caches\transforms-3\ea763f08590e45b5a76c25471423bc7a\transformed\jetified-media3-common-1.4.1\AndroidManifest.xml:22:22-76
 uses-library#androidx.window.extensions
 ADDED from [androidx.window:window:1.2.0] C:\Users\Mohamed Yasser\.gradle\caches\transforms-3\8859fd2468ade3ef2655d1f63d6737f2\transformed\jetified-window-1.2.0\AndroidManifest.xml:23:9-25:40
 	android:required

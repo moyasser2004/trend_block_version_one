@@ -156,8 +156,6 @@ class _ExploreSearchPageState extends State<ExploreSearchPage>
 
   @override
   void dispose() {
-    _tabController.dispose();
-    _textController.dispose();
     super.dispose();
   }
 }

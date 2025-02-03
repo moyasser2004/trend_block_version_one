@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../../shared/const/colors.dart';
 import '../../../../shared/style/app_styles.dart';
+import '../../../../shared/utiles/routes.dart';
+import '../../../profile/All_Bloc/Bloc_get_User/bloc_get.dart';
+import '../../../profile/All_Bloc/Bloc_get_User/event_getU.dart';
 import '../../data/models/local/user_details_model.dart';
 
 class UserAccountDetails extends StatelessWidget {
@@ -32,7 +36,9 @@ class UserAccountDetails extends StatelessWidget {
         horizontalTitleGap: 14,
         minTileHeight: 60,
         onTap: () {
-          // Handle item tap
+          BlocProvider.of<UserBloc>(context)
+              .add(FetchUserEvent2(int.parse(model.id)?? 0));
+          Navigator.pushNamed(context, AppRoutes.userProfile);
         },
       ),
     );

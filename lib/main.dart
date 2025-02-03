@@ -2,6 +2,7 @@ import 'package:device_preview/device_preview.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:photo_manager/photo_manager.dart';
 import 'package:trend/shared/utiles/bloc_providers.dart';
 import 'package:trend/shared/utiles/dependancy_injection.dart';
 import 'package:trend/shared/utiles/routes.dart';
@@ -12,15 +13,19 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await DependancyInjection.dependancyInjection.initDependancies();
   ServiceLocator().init();
+  PhotoManager.setIgnorePermissionCheck(false);
   runApp(
-    DevicePreview(
-      enabled: !kReleaseMode,
-      builder:
-          // (context)=>  MyApp(),
-          (context) => AppBlocProviders.getBlocProviders(
+      AppBlocProviders.getBlocProviders(
         child: const MyApp(),
-      ), // Wrap your app
-    ),
+      ),
+    // DevicePreview(
+    //   enabled: !kReleaseMode,
+    //   builder:
+    //       // (context)=>  MyApp(),
+    //       (context) => AppBlocProviders.getBlocProviders(
+    //     child: const MyApp(),
+    //   ), // Wrap your app
+    // ),
   );
 }
 
@@ -34,9 +39,9 @@ class MyApp extends StatelessWidget {
       minTextAdapt: true,
       builder: (context, child) {
         return MaterialApp(
-          useInheritedMediaQuery: true,
-          locale: DevicePreview.locale(context),
-          builder: DevicePreview.appBuilder,
+          // useInheritedMediaQuery: true,
+          // locale: DevicePreview.locale(context),
+          // builder: DevicePreview.appBuilder,
           color: Colors.white,
           themeMode: ThemeMode.light,
           title: 'Trend',

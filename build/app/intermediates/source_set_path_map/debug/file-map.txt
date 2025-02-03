@@ -30,24 +30,29 @@ com.example.trend.app-jetified-appcompat-resources-1.6.1-28 C:\Users\Mohamed Yas
 com.example.trend.app-jetified-startup-runtime-1.1.1-29 C:\Users\Mohamed Yasser\.gradle\caches\transforms-3\a1fd92b89d0c194f8fe8fdca4d20e2ee\transformed\jetified-startup-runtime-1.1.1\res
 com.example.trend.app-slidingpanelayout-1.2.0-30 C:\Users\Mohamed Yasser\.gradle\caches\transforms-3\a499fa3c34a38edcfdea6b351554e382\transformed\slidingpanelayout-1.2.0\res
 com.example.trend.app-jetified-emoji2-1.2.0-31 C:\Users\Mohamed Yasser\.gradle\caches\transforms-3\b54c8b34dc2cec64a7baaa02a8a7a5a3\transformed\jetified-emoji2-1.2.0\res
-com.example.trend.app-jetified-annotation-experimental-1.4.0-32 C:\Users\Mohamed Yasser\.gradle\caches\transforms-3\c4537ab9015740d05f09a422063523a5\transformed\jetified-annotation-experimental-1.4.0\res
-com.example.trend.app-fragment-1.7.1-33 C:\Users\Mohamed Yasser\.gradle\caches\transforms-3\ca4d40f38b71d4c621d36eba6fe2f4a4\transformed\fragment-1.7.1\res
-com.example.trend.app-jetified-datastore-release-34 C:\Users\Mohamed Yasser\.gradle\caches\transforms-3\e3611af684c8af9ba655b32249084f4e\transformed\jetified-datastore-release\res
-com.example.trend.app-jetified-tracing-1.2.0-35 C:\Users\Mohamed Yasser\.gradle\caches\transforms-3\e896b9ac412a8814559a776dc7b5a420\transformed\jetified-tracing-1.2.0\res
-com.example.trend.app-jetified-savedstate-ktx-1.2.1-36 C:\Users\Mohamed Yasser\.gradle\caches\transforms-3\eb30b97cf0c123a3aa78bfba9082ceea\transformed\jetified-savedstate-ktx-1.2.1\res
-com.example.trend.app-appcompat-1.6.1-37 C:\Users\Mohamed Yasser\.gradle\caches\transforms-3\f3e01c95a04b87be1a2f2ed87103c6d5\transformed\appcompat-1.6.1\res
-com.example.trend.app-debug-38 D:\Flutter_block_version_one\trend_bloc\trend\android\app\src\debug\res
-com.example.trend.app-main-39 D:\Flutter_block_version_one\trend_bloc\trend\android\app\src\main\res
-com.example.trend.app-pngs-40 D:\Flutter_block_version_one\trend_bloc\trend\build\app\generated\res\pngs\debug
-com.example.trend.app-resValues-41 D:\Flutter_block_version_one\trend_bloc\trend\build\app\generated\res\resValues\debug
-com.example.trend.app-packageDebugResources-42 D:\Flutter_block_version_one\trend_bloc\trend\build\app\intermediates\incremental\debug\packageDebugResources\merged.dir
-com.example.trend.app-packageDebugResources-43 D:\Flutter_block_version_one\trend_bloc\trend\build\app\intermediates\incremental\debug\packageDebugResources\stripped.dir
-com.example.trend.app-merged_res-44 D:\Flutter_block_version_one\trend_bloc\trend\build\app\intermediates\merged_res\debug
-com.example.trend.app-packaged_res-45 D:\Flutter_block_version_one\trend_bloc\trend\build\flutter_plugin_android_lifecycle\intermediates\packaged_res\debug
-com.example.trend.app-packaged_res-46 D:\Flutter_block_version_one\trend_bloc\trend\build\fluttertoast\intermediates\packaged_res\debug
-com.example.trend.app-packaged_res-47 D:\Flutter_block_version_one\trend_bloc\trend\build\image_cropper\intermediates\packaged_res\debug
-com.example.trend.app-packaged_res-48 D:\Flutter_block_version_one\trend_bloc\trend\build\image_picker_android\intermediates\packaged_res\debug
-com.example.trend.app-packaged_res-49 D:\Flutter_block_version_one\trend_bloc\trend\build\path_provider_android\intermediates\packaged_res\debug
-com.example.trend.app-packaged_res-50 D:\Flutter_block_version_one\trend_bloc\trend\build\share_plus\intermediates\packaged_res\debug
-com.example.trend.app-packaged_res-51 D:\Flutter_block_version_one\trend_bloc\trend\build\shared_preferences_android\intermediates\packaged_res\debug
-com.example.trend.app-packaged_res-52 D:\Flutter_block_version_one\trend_bloc\trend\build\sqflite_android\intermediates\packaged_res\debug
+com.example.trend.app-jetified-glide-4.15.1-32 C:\Users\Mohamed Yasser\.gradle\caches\transforms-3\be869ca6c225a7b816c1000e22a2aeff\transformed\jetified-glide-4.15.1\res
+com.example.trend.app-jetified-annotation-experimental-1.4.0-33 C:\Users\Mohamed Yasser\.gradle\caches\transforms-3\c4537ab9015740d05f09a422063523a5\transformed\jetified-annotation-experimental-1.4.0\res
+com.example.trend.app-fragment-1.7.1-34 C:\Users\Mohamed Yasser\.gradle\caches\transforms-3\ca4d40f38b71d4c621d36eba6fe2f4a4\transformed\fragment-1.7.1\res
+com.example.trend.app-jetified-media3-exoplayer-1.4.1-35 C:\Users\Mohamed Yasser\.gradle\caches\transforms-3\d61e896a1291a8958fc90251d79de4b7\transformed\jetified-media3-exoplayer-1.4.1\res
+com.example.trend.app-jetified-datastore-release-36 C:\Users\Mohamed Yasser\.gradle\caches\transforms-3\e3611af684c8af9ba655b32249084f4e\transformed\jetified-datastore-release\res
+com.example.trend.app-jetified-tracing-1.2.0-37 C:\Users\Mohamed Yasser\.gradle\caches\transforms-3\e896b9ac412a8814559a776dc7b5a420\transformed\jetified-tracing-1.2.0\res
+com.example.trend.app-jetified-savedstate-ktx-1.2.1-38 C:\Users\Mohamed Yasser\.gradle\caches\transforms-3\eb30b97cf0c123a3aa78bfba9082ceea\transformed\jetified-savedstate-ktx-1.2.1\res
+com.example.trend.app-appcompat-1.6.1-39 C:\Users\Mohamed Yasser\.gradle\caches\transforms-3\f3e01c95a04b87be1a2f2ed87103c6d5\transformed\appcompat-1.6.1\res
+com.example.trend.app-debug-40 D:\Flutter_block_version_one\trend_bloc\trend\android\app\src\debug\res
+com.example.trend.app-main-41 D:\Flutter_block_version_one\trend_bloc\trend\android\app\src\main\res
+com.example.trend.app-pngs-42 D:\Flutter_block_version_one\trend_bloc\trend\build\app\generated\res\pngs\debug
+com.example.trend.app-resValues-43 D:\Flutter_block_version_one\trend_bloc\trend\build\app\generated\res\resValues\debug
+com.example.trend.app-packageDebugResources-44 D:\Flutter_block_version_one\trend_bloc\trend\build\app\intermediates\incremental\debug\packageDebugResources\merged.dir
+com.example.trend.app-packageDebugResources-45 D:\Flutter_block_version_one\trend_bloc\trend\build\app\intermediates\incremental\debug\packageDebugResources\stripped.dir
+com.example.trend.app-merged_res-46 D:\Flutter_block_version_one\trend_bloc\trend\build\app\intermediates\merged_res\debug
+com.example.trend.app-packaged_res-47 D:\Flutter_block_version_one\trend_bloc\trend\build\flutter_plugin_android_lifecycle\intermediates\packaged_res\debug
+com.example.trend.app-packaged_res-48 D:\Flutter_block_version_one\trend_bloc\trend\build\fluttertoast\intermediates\packaged_res\debug
+com.example.trend.app-packaged_res-49 D:\Flutter_block_version_one\trend_bloc\trend\build\image_cropper\intermediates\packaged_res\debug
+com.example.trend.app-packaged_res-50 D:\Flutter_block_version_one\trend_bloc\trend\build\image_picker_android\intermediates\packaged_res\debug
+com.example.trend.app-packaged_res-51 D:\Flutter_block_version_one\trend_bloc\trend\build\insta_assets_crop\intermediates\packaged_res\debug
+com.example.trend.app-packaged_res-52 D:\Flutter_block_version_one\trend_bloc\trend\build\path_provider_android\intermediates\packaged_res\debug
+com.example.trend.app-packaged_res-53 D:\Flutter_block_version_one\trend_bloc\trend\build\photo_manager\intermediates\packaged_res\debug
+com.example.trend.app-packaged_res-54 D:\Flutter_block_version_one\trend_bloc\trend\build\share_plus\intermediates\packaged_res\debug
+com.example.trend.app-packaged_res-55 D:\Flutter_block_version_one\trend_bloc\trend\build\shared_preferences_android\intermediates\packaged_res\debug
+com.example.trend.app-packaged_res-56 D:\Flutter_block_version_one\trend_bloc\trend\build\sqflite_android\intermediates\packaged_res\debug
+com.example.trend.app-packaged_res-57 D:\Flutter_block_version_one\trend_bloc\trend\build\video_player_android\intermediates\packaged_res\debug

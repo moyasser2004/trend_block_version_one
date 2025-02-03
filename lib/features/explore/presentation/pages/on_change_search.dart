@@ -25,10 +25,15 @@ class OnChangeSearch extends StatefulWidget {
 }
 
 class _OnChangeSearchState extends State<OnChangeSearch> {
-  final TextEditingController _searchController =
-      TextEditingController();
+  late TextEditingController _searchController;
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
 
+  
+  initState() {
+    super.initState();
+    _searchController = TextEditingController();
+  }
+  
   void _onSearchChanged() {
     context.read<ForYouSearchBloc>().add(
           UserSearchEvent(_searchController.text.trim()),

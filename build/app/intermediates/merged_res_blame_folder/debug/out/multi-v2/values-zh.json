@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.trend.app-mergeDebugResources-42:/values-zh/values-zh.xml",
+            "outputFile": "com.example.trend.app-mergeDebugResources-44:/values-zh/values-zh.xml",
             "map": [
                 {
                     "source": "C:\\Users\\Mohamed Yasser\\.gradle\\caches\\transforms-3\\36331ed7e73d989b67f18cc56e47c317\\transformed\\jetified-ucrop-2.2.10\\res\\values-zh\\values-zh.xml",

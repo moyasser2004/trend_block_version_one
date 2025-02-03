@@ -2,6 +2,12 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+
+    <key>NSPhotoLibraryUsageDescription</key>
+    <string>We need access to your photo library to select images.</string>    
+    <key>NSPhotoLibraryAddUsageDescription</key>
+    <string>We need permission to save edited images to your photo library.</string>
+
 	<key>CADisableMinimumFrameDurationOnPhone</key>
 	<true/>
 	<key>CFBundleDevelopmentRegion</key>

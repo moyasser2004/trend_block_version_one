@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:image_cropper/image_cropper.dart';
 import 'package:image_picker/image_picker.dart';
+import 'package:wechat_assets_picker/wechat_assets_picker.dart';
 import 'package:trend/features/add_post/bloc/AddPostEvent.dart';
 import 'package:trend/features/add_post/bloc/Add_Post_State.dart';
 import 'package:trend/features/add_post/bloc/Add_Post_cubit.dart';
@@ -19,8 +20,6 @@ import 'package:trend/features/posts/bloc/Bloc_post/post_event.dart';
 import '../../../shared/core/local/SharedPreferencesDemo.dart';
 import '../../../shared/utiles/routes.dart';
 
-
-
 class AddNewPostPage extends StatefulWidget {
   const AddNewPostPage({super.key});
 
@@ -31,100 +30,74 @@ class AddNewPostPage extends StatefulWidget {
 class _AddNewPostPageState extends State<AddNewPostPage> {
   String _description = "";
   File? _selectedImage; // Store selected image
-  final ImagePicker _picker = ImagePicker(); // For image picking
 
-  Future<File?> cropImage(XFile pickedFile,
-      {bool changeHeight = false}) async {
-    final targetWidth = 20.0;
-    final targetHeight = 20.0;
-
-    // Calculate aspect ratio if targetWidth and targetHeight are provided
-    CropAspectRatio? aspectRatio;
-    aspectRatio =
-        CropAspectRatio(ratioX: targetWidth, ratioY: targetHeight);
-
+  Future<File?> cropImage(XFile pickedFile) async {
     final croppedFile = await ImageCropper().cropImage(
       sourcePath: pickedFile.path,
       compressFormat: ImageCompressFormat.jpg,
       compressQuality: 100,
-      aspectRatio: aspectRatio,
-      // Set aspect ratio dynamically
+      aspectRatio: const CropAspectRatio(ratioX: 1, ratioY: 1),
       uiSettings: [
         AndroidUiSettings(
-          toolbarColor: Colors.white,
-          toolbarWidgetColor: Colors.black,
-          statusBarColor: Colors.white,
-          initAspectRatio: CropAspectRatioPreset.original,
-          lockAspectRatio: aspectRatio != null,
-          // Lock aspect ratio if specified
-          hideBottomControls: true,
+          toolbarTitle: 'Crop Image',
+          toolbarColor: Colors.black,
+          toolbarWidgetColor: Colors.white,
+          initAspectRatio: CropAspectRatioPreset.square,
+          lockAspectRatio: true,
         ),
         IOSUiSettings(
-          title: 'Edit Image',
-          cropStyle: CropStyle.rectangle,
-          aspectRatioLockEnabled: aspectRatio != null,
-          // Lock aspect ratio if specified
+          title: 'Crop Image',
+          aspectRatioLockEnabled: true,
           resetButtonHidden: false,
+          aspectRatioPickerButtonHidden: true,
+          rotateButtonsHidden: true,
+          rotateClockwiseButtonHidden: true,
+          doneButtonTitle: 'Done',
+          cancelButtonTitle: 'Cancel',
         ),
       ],
     );
 
-    if (croppedFile != null) {
-      final file = File(croppedFile.path);
-      if (changeHeight) {
-        print('Height adjustment is enabled. Add resizing logic.');
-      }
-      return file;
-    }
-    return null;
+    return croppedFile != null ? File(croppedFile.path) : null;
   }
 
   Future<void> _pickImage() async {
-    final XFile? image =
-    await _picker.pickImage(source: ImageSource.gallery);
-    if (image != null) {
-      final croppedImage = await cropImage(image);
-      if (croppedImage != null) {
-        setState(() {
-          _selectedImage = croppedImage;
-        });
-      } else {
-        print("Image cropping canceled");
+    final List<AssetEntity>? pickedAssets = await AssetPicker.pickAssets(
+      context,
+      pickerConfig: const AssetPickerConfig(
+        maxAssets: 1,
+        requestType: RequestType.image,
+      ),
+    );
+
+    if (pickedAssets != null && pickedAssets.isNotEmpty) {
+      final File? file = await pickedAssets.first.file;
+      if (file != null) {
+        final croppedImage = await cropImage(XFile(file.path));
+        if (croppedImage != null) {
+          setState(() {
+            _selectedImage = croppedImage;
+          });
+        } else {
+          print("Image cropping canceled");
+        }
       }
     } else {
       print("No image selected");
     }
   }
 
-  Future<void> _pickImageFromCamera() async {
-    final XFile? image =
-    await _picker.pickImage(source: ImageSource.camera);
-    if (image != null) {
-      final croppedImage = await cropImage(image);
-      if (croppedImage != null) {
-        setState(() {
-          _selectedImage = croppedImage;
-        });
-      } else {
-        print("Image cropping canceled");
-      }
-    } else {
-      print("No image captured");
-    }
-  }
-
   @override
   Widget build(BuildContext context) {
     return WillPopScope(
-      onWillPop:(){
+      onWillPop: () {
         Navigator.pushNamed(context, AppRoutes.home);
         return Future.value(false);
       },
       child: Scaffold(
         backgroundColor: Colors.white,
         bottomNavigationBar: Padding(
-          padding: const EdgeInsets.symmetric(
-              vertical: 5, horizontal: 10),
+          padding: const EdgeInsets.symmetric(vertical: 5, horizontal: 10),
           child: SizedBox(
             height: 45,
             width: MediaQuery.of(context).size.width,
@@ -141,9 +114,8 @@ class _AddNewPostPageState extends State<AddNewPostPage> {
                   });
 
                   ScaffoldMessenger.of(context).showSnackBar(
-                    SnackBar(
-                      content:
-                      Text("The Post was added successfully"),
+                    const SnackBar(
+                      content: Text("The Post was added successfully"),
                       backgroundColor: Colors.green,
                       duration: Duration(seconds: 2),
                     ),
@@ -152,10 +124,7 @@ class _AddNewPostPageState extends State<AddNewPostPage> {
                   int c = await SharedPreferencesDemo.getID();
                   BlocProvider.of<CurrentUserBloc>(context)
                       .add(GetPostForCurrentUserEvent(id: c));
-                  BlocProvider.of<PostBloc>(context)
-                      .add(FetchPosts());
-                } else if (state is AddPostFailure) {
-                  // Handle failure if necessary
+                  BlocProvider.of<PostBloc>(context).add(FetchPosts());
                 }
               },
               builder: (context, state) {
@@ -168,33 +137,24 @@ class _AddNewPostPageState extends State<AddNewPostPage> {
                         borderRadius: BorderRadius.circular(8),
                       ),
                     ),
-                    child: CircularProgressIndicator(
-                      color: Colors.black,
-                    ),
+                    child: const CircularProgressIndicator(color: Colors.black),
                   );
                 } else {
                   return ElevatedButton(
-                    onPressed: (_selectedImage != null &&
-                        _description.isNotEmpty)
+                    onPressed: (_selectedImage != null && _description.isNotEmpty)
                         ? () {
                       context.read<AddPostBloc>().add(
-                        AddNewPostEvent(NewPost(
-                          fileImage: _selectedImage!,
-                          description: _description,
-                        )),
+                        AddNewPostEvent(
+                          NewPost(
+                            fileImage: _selectedImage!,
+                            description: _description,
+                          ),
+                        ),
                       );
                     }
-                        : () {
-                      context.read<AddPostBloc>().add(
-                        AddNewPostEvent(NewPost(
-                          fileImage: _selectedImage!,
-                          description: "",
-                        )),
-                      );
-                    },
+                        : null,
                     style: ElevatedButton.styleFrom(
-                      backgroundColor: (_selectedImage != null ||
-                          _description.isNotEmpty)
+                      backgroundColor: (_selectedImage != null && _description.isNotEmpty)
                           ? Colors.black
                           : Colors.grey[400],
                       shape: RoundedRectangleBorder(
@@ -216,8 +176,7 @@ class _AddNewPostPageState extends State<AddNewPostPage> {
           ),
         ),
         body: Padding(
-          padding: const EdgeInsets.symmetric(
-              horizontal: 16.0, vertical: 8.0),
+          padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
           child: CustomScrollView(
             slivers: [
               SliverToBoxAdapter(
@@ -227,23 +186,20 @@ class _AddNewPostPageState extends State<AddNewPostPage> {
                   elevation: 0,
                   title: const Text(
                     'Add a new post',
-                    style: TextStyle(
-                        color: Colors.black, fontSize: 20),
+                    style: TextStyle(color: Colors.black, fontSize: 20),
                   ),
-                  iconTheme:
-                  const IconThemeData(color: Colors.black),
                 ),
               ),
               SliverToBoxAdapter(
-                child: CustomTextField(onChanged: (value) {
-                  setState(() {
-                    _description = value;
-                  });
-                }),
+                child: CustomTextField(
+                  onChanged: (value) {
+                    setState(() {
+                      _description = value;
+                    });
+                  },
+                ),
               ),
-              SliverToBoxAdapter(
-                child: const SizedBox(height: 16),
-              ),
+              SliverToBoxAdapter(child: const SizedBox(height: 16)),
               SliverToBoxAdapter(
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -254,50 +210,33 @@ class _AddNewPostPageState extends State<AddNewPostPage> {
                       icon: const Icon(Icons.attach_file),
                       color: Colors.black,
                     ),
-                    IconButton(
-                      onPressed: _pickImageFromCamera,
-                      icon: const Icon(Icons.image),
-                      color: Colors.black,
-                    ),
                   ],
                 ),
               ),
+              SliverToBoxAdapter(child: const SizedBox(height: 20)),
               SliverToBoxAdapter(
-                child: const SizedBox(height: 20),
-              ),
-              SliverToBoxAdapter(
-                child: const Divider(
-                  color: Color(0xffF5F5F7),
-                  height: 0,
-                ),
-              ),
-              SliverToBoxAdapter(
-                  child: (_selectedImage != null)
-                      ? Center(
-                    child: InkWell(
-                      onTap: () async {
-                        if (_selectedImage != null) {
-                          final croppedImage =
-                          await cropImage(XFile(
-                              _selectedImage!.path));
-                          if (croppedImage != null) {
-                            setState(() {
-                              _selectedImage = croppedImage;
-                            });
-                          } else {
-                            print("Image cropping canceled");
-                          }
+                child: (_selectedImage != null)
+                    ? Center(
+                  child: InkWell(
+                    onTap: () async {
+                      if (_selectedImage != null) {
+                        final croppedImage = await cropImage(XFile(_selectedImage!.path));
+                        if (croppedImage != null) {
+                          setState(() {
+                            _selectedImage = croppedImage;
+                          });
                         }
-                      },
-                      child: Image.file(
-                        _selectedImage!,
-                        width:
-                        MediaQuery.of(context).size.width,
-                        fit: BoxFit.fill,
-                      ),
+                      }
+                    },
+                    child: Image.file(
+                      _selectedImage!,
+                      width: MediaQuery.of(context).size.width,
+                      fit: BoxFit.fill,
                     ),
-                  )
-                      : SizedBox.shrink()),
+                  ),
+                )
+                    : const SizedBox.shrink(),
+              ),
             ],
           ),
         ),

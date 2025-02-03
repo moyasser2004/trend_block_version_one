@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.trend.app-mergeDebugResources-42:/values-v35/values-v35.xml",
+            "outputFile": "com.example.trend.app-mergeDebugResources-44:/values-v35/values-v35.xml",
             "map": [
                 {
                     "source": "D:\\Flutter_block_version_one\\trend_bloc\\trend\\build\\image_cropper\\intermediates\\packaged_res\\debug\\values-v35\\values-v35.xml",
