@@ -1,0 +1,100 @@
+name: trend
+description: "A new Flutter project."
+
+publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+
+
+version: 1.0.0+1
+
+environment:
+  sdk: ">=3.4.1 <4.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+
+  meta: ^1.9.1
+  
+  
+  # Ui Components
+  cupertino_icons: ^1.0.8
+  flutter_screenutil: ^5.9.3
+  flutter_riverpod: ^2.6.1
+  flutter_svg: ^2.0.15
+  image_picker: ^1.1.2
+  switcher_button: ^0.0.4
+  expandable_text: ^2.3.0
+  cached_network_image: ^3.4.1
+  font_awesome_flutter: ^10.8.0
+  fluttertoast: ^8.2.10
+  emoji_selector: ^0.0.6
+  device_preview: ^1.0.1
+  flutter_fadein: ^2.0.0
+  image_cropper: ^8.1.0
+  skeletonizer: ^1.4.3
+  shimmer:
+  flutter_staggered_grid_view: ^0.7.0
+  
+  # HttP Client
+  dio: ^5.7.0
+  
+  # State Management
+  flutter_bloc: ^9.0.0
+    
+  # Data Persistence
+  equatable: ^2.0.7
+  
+  #Local Storage
+  shared_preferences: ^2.3.5
+  
+  # Return types
+  dartz: ^0.10.1
+  
+  # dependency injection
+  get_it: ^8.0.3
+  
+  # Logging
+  dio_intercept_to_curl: ^0.2.0
+  modal_progress_hud_nsn: ^0.5.1
+  
+  # Navigation
+  share_plus: ^10.1.4
+
+  
+  
+  
+  
+  
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  # flutter_lints: ^4.0.0
+
+
+flutter:
+
+
+  uses-material-design: true
+
+
+  assets:
+    - assets/images/
+    - assets/icons/
+
+  # fonts:
+  #   - family: Schyler
+  #     fonts:
+  #       - asset: fonts/Schyler-Regular.ttf
+  #       - asset: fonts/Schyler-Italic.ttf
+  #         style: italic
+  #   - family: Trajan Pro
+  #     fonts:
+  #       - asset: fonts/TrajanPro.ttf
+  #       - asset: fonts/TrajanPro_Bold.ttf
+  #         weight: 700
+  #
+  # For details regarding fonts from package dependencies,
+  # see https://flutter.dev/to/font-from-package
