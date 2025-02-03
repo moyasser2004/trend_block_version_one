@@ -1,4 +1,4 @@
-#Mon Feb 03 14:27:07 EET 2025
+#Mon Feb 03 18:06:25 EET 2025
 base.0=D\:\\Flutter_block_version_one\\trend_bloc\\trend\\build\\app\\intermediates\\dex\\debug\\mergeExtDexDebug\\classes.dex
 base.1=D\:\\Flutter_block_version_one\\trend_bloc\\trend\\build\\app\\intermediates\\dex\\debug\\mergeLibDexDebug\\0\\classes.dex
 base.2=D\:\\Flutter_block_version_one\\trend_bloc\\trend\\build\\app\\intermediates\\dex\\debug\\mergeProjectDexDebug\\0\\classes.dex

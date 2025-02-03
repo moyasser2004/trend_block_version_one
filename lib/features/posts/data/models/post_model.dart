@@ -30,7 +30,7 @@ class PostModel {
       this.viewsCount,
       this.isPublic,
       this.allowComments,
-      this.comments});
+      this.comments, DateTime? createdAt, DateTime? updatedAt});
 
   PostModel.fromJson(Map<String, dynamic> json) {
     id = json['id'];

@@ -1,6 +1,5 @@
 import 'package:dartz/dartz.dart';
 import 'package:trend/features/explore/data/models/remote/get_all_post_model.dart';
-import 'package:trend/features/explore/domain/entities/location_search.dart';
 import 'package:trend/features/explore/domain/repositories/get_post_base_repository.dart';
 import 'package:trend/shared/core/failure.dart';
 

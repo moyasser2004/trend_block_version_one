@@ -11,17 +11,12 @@ class ExploreExplorePostContainer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return InkWell(
-      onTap: () {
-       // Navigator.pushNamed(context, AppRoutes.trendDetails);
-      },
-      child: AspectRatio(
-        aspectRatio: 4 / 5, // Keeps consistent image ratio
-        child: CachedNetworkImage(
-          imageUrl: model.imgUrl , // Request high-quality image
-          fit: BoxFit.fill, // Prevents stretching
-          errorWidget: (context, url, error) => const Icon(Icons.error, size: 40),
-        ),
+    return AspectRatio(
+      aspectRatio: 4 / 5, // Keeps consistent image ratio
+      child: CachedNetworkImage(
+        imageUrl: model.imgUrl , // Request high-quality image
+        fit: BoxFit.fill, // Prevents stretching
+        errorWidget: (context, url, error) => const Icon(Icons.error, size: 40),
       ),
     );
   }

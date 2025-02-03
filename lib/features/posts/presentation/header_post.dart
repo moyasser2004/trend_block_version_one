@@ -18,6 +18,7 @@ import '../../../shared/utiles/routes.dart';
 class HeaderPost extends StatelessWidget {
   final PostModel post;
   HeaderPost({super.key, required this.post});
+  
   String getTimeAgoShort(DateTime createdAt) {
     final currentTime = DateTime.now();
     final difference = currentTime.difference(createdAt);
@@ -38,7 +39,6 @@ class HeaderPost extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     String timeAgo = getTimeAgoShort(post.createdAt);
-
     isMe = SharedPreferencesDemo.loadUserData().id == post.authorId;
     return Container(
       color: Colors.white,

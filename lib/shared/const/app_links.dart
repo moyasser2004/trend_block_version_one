@@ -10,7 +10,11 @@ class ApiEndpoints {
 
   // // Explore Endpoints URL
   static const String getAllPosts = '$baseUrl/explore/posts/?page_size=25';
-  static String forYouPostSearch(String query) => '$baseUrl/explore/search/user-posts/?q=$query';
+  
+  static String getSearchPostsByUserName(String query) => '$baseUrl/explore/search/user-posts/?q=$query';
+  
+  //static String forYouPostSearch(String query) => '$baseUrl/explore/search/user-posts/?q=$query';
+  
   static String getTrendingHashtags(String query) => '$baseUrl/explore/search/hashtag/?q=$query';
   static String getLocationSearch(String query) => '$baseUrl/explore/search/location/?q=$query';
   static String getUserSearch(String query) => '$baseUrl/explore/search/user/?q=$query';

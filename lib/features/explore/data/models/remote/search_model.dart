@@ -90,12 +90,13 @@ class RecentPostModel extends RecentPost {
       required super.sharesCount,
       required super.viewsCount,
       required super.isPublic,
-      required super.allowComments});
+      required super.allowComments,
+      required super.comments});
 
   factory RecentPostModel.fromJson(Map<String, dynamic> json) {
     return RecentPostModel(
-      id: json["id"],
       author: json["author"],
+      id: json["id"],
       authorId: json["author_id"],
       avatar: json["avatar"],
       description: json["description"],
@@ -109,6 +110,59 @@ class RecentPostModel extends RecentPost {
       viewsCount: json["views_count"],
       isPublic: json["is_public"],
       allowComments: json["allow_comments"],
+      comments: [],
     );
   }
+}
+
+class CommentModel extends Comment {
+  CommentModel(
+      {required super.id,
+      required super.post,
+      required super.author,
+      required super.authorId,
+      required super.content,
+      required super.isLiked,
+      required super.createdAt,
+      required super.updatedAt,
+      required super.likesCount,
+      required super.repliesCount,
+      required super.likedUsers,
+      required super.commentOnComment,
+      required super.replies});
+
+  factory CommentModel.fromJson(Map<String, dynamic> json){
+    return CommentModel(
+      id: json["id"],
+      post: json["post"],
+      author: json["author"],
+      authorId: json["author_id"],
+      content: json["content"],
+      isLiked: json["is_liked"],
+      createdAt: DateTime.tryParse(json["created_at"] ?? ""),
+      updatedAt: DateTime.tryParse(json["updated_at"] ?? ""),
+      likesCount: json["likes_count"],
+      repliesCount: json["replies_count"],
+      likedUsers: json["liked_users"] == null ? [] : List<LikedUser>.from(json["liked_users"]!.map((x) => LikedUserModel.fromJson(x))),
+      commentOnComment: json["comment_on_comment"],
+      replies: json["replies"] == null ? [] : List<Comment>.from(json["replies"]!.map((x) => CommentModel.fromJson(x))),
+    );
+  }
+  
+  
+}
+
+
+class LikedUserModel extends LikedUser {
+  LikedUserModel({required super.id, required super.username});
+
+
+  factory LikedUserModel.fromJson(Map<String, dynamic> json){
+    return LikedUserModel(
+      id: json["id"],
+      username: json["username"],
+    );
+  }
+
+
 }

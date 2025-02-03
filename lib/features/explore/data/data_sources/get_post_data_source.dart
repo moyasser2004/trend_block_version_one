@@ -11,15 +11,10 @@ import '../models/remote/location_search_model.dart';
 
 abstract class BasePostDataSource {
   Future<AllPostModel> getAllPosts();
-
   Future<AllPostModel> getPostWithPageNumber(String pageNumber);
-
   Future<PostSearchModel> forYouSearch(String query);
-
   Future<UserSearchModel> UserSearch(String query);
-
   Future<SearchHashtagsModel> HashtagsSearch(String query);
-
   Future<LocationsSearchModel> LocationSearch(String query);
 }
 
@@ -60,10 +55,12 @@ class PostDataSource extends BasePostDataSource {
     }
   }
 
+  
+  
   @override
   Future<PostSearchModel> forYouSearch(String query) async {
     Response response = await Dio().get(
-      ApiEndpoints.forYouPostSearch(query),
+      ApiEndpoints.getSearchPostsByUserName(query),
       options: Options(
         headers: {'Authorization': 'Bearer $tok'},
       ),
@@ -76,6 +73,8 @@ class PostDataSource extends BasePostDataSource {
     }
   }
 
+  
+  
   @override
   Future<UserSearchModel> UserSearch(String query) async {
     Response response = await Dio().get(
