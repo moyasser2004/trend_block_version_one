@@ -73,8 +73,9 @@ class _ZoomingImageState extends State<ZoomingImage>
               // imageBuilder: (context, imageProvider) =>
               //     Image.asset('assets/images/avatar.jpg'), // الصورة المحمّلة
 
-              placeholder: (context, url) =>
-                  Image.asset('assets/images/avatar.jpg'), // صورة أثناء التحميل
+              placeholder: (context, url) => Container(
+                height: 200,
+              ), // صورة أثناء التحميل
 
               errorWidget: (context, url, error) =>
                   Image.asset('assets/images/avatar.jpg'), // صورة في حال الخطأ

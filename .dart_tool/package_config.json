@@ -284,12 +284,6 @@
       "languageVersion": "3.0"
     },
     {
-      "name": "fraction",
-      "rootUri": "file:///C:/Users/Options/AppData/Local/Pub/Cache/hosted/pub.dev/fraction-5.0.4",
-      "packageUri": "lib/",
-      "languageVersion": "3.6"
-    },
-    {
       "name": "freezed_annotation",
       "rootUri": "file:///C:/Users/Options/AppData/Local/Pub/Cache/hosted/pub.dev/freezed_annotation-2.4.4",
       "packageUri": "lib/",
@@ -390,18 +384,6 @@
       "rootUri": "file:///C:/Users/Options/AppData/Local/Pub/Cache/hosted/pub.dev/image_picker_windows-0.2.1+1",
       "packageUri": "lib/",
       "languageVersion": "2.19"
-    },
-    {
-      "name": "insta_assets_crop",
-      "rootUri": "file:///C:/Users/Options/AppData/Local/Pub/Cache/hosted/pub.dev/insta_assets_crop-0.1.0",
-      "packageUri": "lib/",
-      "languageVersion": "2.17"
-    },
-    {
-      "name": "insta_assets_picker",
-      "rootUri": "file:///C:/Users/Options/AppData/Local/Pub/Cache/hosted/pub.dev/insta_assets_picker-3.1.0",
-      "packageUri": "lib/",
-      "languageVersion": "3.2"
     },
     {
       "name": "intl",
@@ -884,7 +866,7 @@
       "languageVersion": "3.4"
     }
   ],
-  "generated": "2025-02-05T09:31:05.846064Z",
+  "generated": "2025-02-05T12:16:40.732474Z",
   "generator": "pub",
   "generatorVersion": "3.6.1",
   "flutterRoot": "file:///C:/src/flutter",

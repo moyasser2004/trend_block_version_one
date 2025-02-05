@@ -6,6 +6,7 @@ class CustomTextField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TextField(
+      onTapOutside: (_) => FocusManager.instance.primaryFocus?.unfocus(),
       onChanged: onChanged,
       maxLines: 4,
       decoration: InputDecoration(

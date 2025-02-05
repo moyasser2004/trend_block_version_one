@@ -15,7 +15,6 @@ import 'package:trend/features/posts/presentation/Manager/Bloc_Current_user/Curr
 import 'package:trend/features/posts/presentation/Manager/Bloc_Current_user/Current%20_user_event.dart';
 import 'package:trend/features/posts/presentation/Manager/Bloc_post/post_bloc.dart';
 import 'package:trend/features/posts/presentation/Manager/Bloc_post/post_event.dart';
-import 'package:wechat_assets_picker/wechat_assets_picker.dart';
 
 import '../../../shared/core/local/SharedPreferencesDemo.dart';
 import '../../../shared/utiles/routes.dart';
@@ -29,8 +28,9 @@ class AddNewPostPage extends StatefulWidget {
 
 class _AddNewPostPageState extends State<AddNewPostPage> {
   String _description = "";
-  File? _selectedImage; // Store selected image
+  File? _selectedImage;
 
+  // Image Cropper Function
   Future<File?> cropImage(XFile pickedFile) async {
     final croppedFile = await ImageCropper().cropImage(
       sourcePath: pickedFile.path,
@@ -61,30 +61,48 @@ class _AddNewPostPageState extends State<AddNewPostPage> {
     return croppedFile != null ? File(croppedFile.path) : null;
   }
 
-  Future<void> _pickImage() async {
-    final List<AssetEntity>? pickedAssets = await AssetPicker.pickAssets(
-      context,
-      pickerConfig: const AssetPickerConfig(
-        maxAssets: 1,
-        requestType: RequestType.image,
-      ),
-    );
-
-    if (pickedAssets != null && pickedAssets.isNotEmpty) {
-      final File? file = await pickedAssets.first.file;
-      if (file != null) {
-        final croppedImage = await cropImage(XFile(file.path));
-        if (croppedImage != null) {
-          setState(() {
-            _selectedImage = croppedImage;
-          });
-        } else {
-          print("Image cropping canceled");
-        }
+  // Function to Pick Image from Camera or Gallery
+  Future<void> _pickImage(ImageSource source) async {
+    final XFile? pickedFile = await ImagePicker().pickImage(source: source);
+    if (pickedFile != null) {
+      final croppedImage = await cropImage(pickedFile);
+      if (croppedImage != null) {
+        setState(() {
+          _selectedImage = croppedImage;
+        });
       }
     } else {
       print("No image selected");
     }
+  }
+
+  // Show Dialog to Choose Between Camera & Gallery
+  void _showImagePickerDialog() {
+    showModalBottomSheet(
+      context: context,
+      builder: (context) {
+        return Wrap(
+          children: [
+            ListTile(
+              leading: const Icon(Icons.camera_alt),
+              title: const Text("Take a Photo"),
+              onTap: () {
+                Navigator.pop(context);
+                _pickImage(ImageSource.camera);
+              },
+            ),
+            ListTile(
+              leading: const Icon(Icons.photo_library),
+              title: const Text("Choose from Gallery"),
+              onTap: () {
+                Navigator.pop(context);
+                _pickImage(ImageSource.gallery);
+              },
+            ),
+          ],
+        );
+      },
+    );
   }
 
   @override
@@ -107,7 +125,6 @@ class _AddNewPostPageState extends State<AddNewPostPage> {
                   BlocProvider.of<BottomNavBloc>(context)
                       .add(BottomNavItemSelected(0));
 
-                  // Clear the image and description after success
                   setState(() {
                     _description = "";
                     _selectedImage = null;
@@ -208,7 +225,7 @@ class _AddNewPostPageState extends State<AddNewPostPage> {
                   children: [
                     const Spacer(),
                     IconButton(
-                      onPressed: _pickImage,
+                      onPressed: _showImagePickerDialog,
                       icon: const Icon(Icons.attach_file),
                       color: Colors.black,
                     ),

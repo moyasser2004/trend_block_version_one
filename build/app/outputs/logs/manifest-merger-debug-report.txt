@@ -40,7 +40,6 @@ MERGED from [:image_picker_android] C:\Users\Options\Documents\GitHub\trend_bloc
 MERGED from [:flutter_plugin_android_lifecycle] C:\Users\Options\Documents\GitHub\trend_block_version_one\build\flutter_plugin_android_lifecycle\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-7:12
 MERGED from [:fluttertoast] C:\Users\Options\Documents\GitHub\trend_block_version_one\build\fluttertoast\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-7:12
 MERGED from [:image_cropper] C:\Users\Options\Documents\GitHub\trend_block_version_one\build\image_cropper\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-7:12
-MERGED from [:insta_assets_crop] C:\Users\Options\Documents\GitHub\trend_block_version_one\build\insta_assets_crop\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-10:12
 MERGED from [:path_provider_android] C:\Users\Options\Documents\GitHub\trend_block_version_one\build\path_provider_android\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-7:12
 MERGED from [:photo_manager] C:\Users\Options\Documents\GitHub\trend_block_version_one\build\photo_manager\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-11:12
 MERGED from [:share_plus] C:\Users\Options\Documents\GitHub\trend_block_version_one\build\share_plus\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-35:12
@@ -162,8 +161,6 @@ MERGED from [:fluttertoast] C:\Users\Options\Documents\GitHub\trend_block_versio
 MERGED from [:fluttertoast] C:\Users\Options\Documents\GitHub\trend_block_version_one\build\fluttertoast\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-44
 MERGED from [:image_cropper] C:\Users\Options\Documents\GitHub\trend_block_version_one\build\image_cropper\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-44
 MERGED from [:image_cropper] C:\Users\Options\Documents\GitHub\trend_block_version_one\build\image_cropper\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-44
-MERGED from [:insta_assets_crop] C:\Users\Options\Documents\GitHub\trend_block_version_one\build\insta_assets_crop\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-44
-MERGED from [:insta_assets_crop] C:\Users\Options\Documents\GitHub\trend_block_version_one\build\insta_assets_crop\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-44
 MERGED from [:path_provider_android] C:\Users\Options\Documents\GitHub\trend_block_version_one\build\path_provider_android\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-44
 MERGED from [:path_provider_android] C:\Users\Options\Documents\GitHub\trend_block_version_one\build\path_provider_android\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-44
 MERGED from [:photo_manager] C:\Users\Options\Documents\GitHub\trend_block_version_one\build\photo_manager\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-44
@@ -357,17 +354,11 @@ ADDED from [:image_picker_android] C:\Users\Options\Documents\GitHub\trend_block
 	android:name
 		ADDED from [:image_picker_android] C:\Users\Options\Documents\GitHub\trend_block_version_one\build\image_picker_android\intermediates\merged_manifest\debug\AndroidManifest.xml:29:17-63
 uses-permission#android.permission.READ_EXTERNAL_STORAGE
-ADDED from [:insta_assets_crop] C:\Users\Options\Documents\GitHub\trend_block_version_one\build\insta_assets_crop\intermediates\merged_manifest\debug\AndroidManifest.xml:7:5-80
-MERGED from [:photo_manager] C:\Users\Options\Documents\GitHub\trend_block_version_one\build\photo_manager\intermediates\merged_manifest\debug\AndroidManifest.xml:7:5-9:38
-MERGED from [:photo_manager] C:\Users\Options\Documents\GitHub\trend_block_version_one\build\photo_manager\intermediates\merged_manifest\debug\AndroidManifest.xml:7:5-9:38
+ADDED from [:photo_manager] C:\Users\Options\Documents\GitHub\trend_block_version_one\build\photo_manager\intermediates\merged_manifest\debug\AndroidManifest.xml:7:5-9:38
 	android:maxSdkVersion
 		ADDED from [:photo_manager] C:\Users\Options\Documents\GitHub\trend_block_version_one\build\photo_manager\intermediates\merged_manifest\debug\AndroidManifest.xml:9:9-35
 	android:name
-		ADDED from [:insta_assets_crop] C:\Users\Options\Documents\GitHub\trend_block_version_one\build\insta_assets_crop\intermediates\merged_manifest\debug\AndroidManifest.xml:7:22-77
-uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
-ADDED from [:insta_assets_crop] C:\Users\Options\Documents\GitHub\trend_block_version_one\build\insta_assets_crop\intermediates\merged_manifest\debug\AndroidManifest.xml:8:5-81
-	android:name
-		ADDED from [:insta_assets_crop] C:\Users\Options\Documents\GitHub\trend_block_version_one\build\insta_assets_crop\intermediates\merged_manifest\debug\AndroidManifest.xml:8:22-78
+		ADDED from [:photo_manager] C:\Users\Options\Documents\GitHub\trend_block_version_one\build\photo_manager\intermediates\merged_manifest\debug\AndroidManifest.xml:8:9-64
 provider#dev.fluttercommunity.plus.share.ShareFileProvider
 ADDED from [:share_plus] C:\Users\Options\Documents\GitHub\trend_block_version_one\build\share_plus\intermediates\merged_manifest\debug\AndroidManifest.xml:13:9-21:20
 	android:grantUriPermissions

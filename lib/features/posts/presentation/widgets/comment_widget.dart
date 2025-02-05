@@ -50,7 +50,8 @@ class _CommentWidgetState extends State<CommentWidget> {
 
   @override
   Widget build(BuildContext context) {
-    String c = widget.comment.likesCount.toString() ?? 0.toString();
+    int c = 0;
+    c = widget.comment.likesCount ?? 0;
 
     return Padding(
       padding: EdgeInsets.symmetric(vertical: 8.h, horizontal: 16.w),
@@ -87,7 +88,7 @@ class _CommentWidgetState extends State<CommentWidget> {
                           ),
                   ),
                   Text(
-                    "${c != '0' ? c : ''}",
+                    "${c != 0 ? c : ''}",
                     style: TextStyle(
                       fontSize: 9.sp,
                       fontWeight: FontWeight.bold,

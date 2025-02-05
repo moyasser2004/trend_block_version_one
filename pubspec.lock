@@ -365,14 +365,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "10.8.0"
-  fraction:
-    dependency: transitive
-    description:
-      name: fraction
-      sha256: "7804c9a73d26bd3d5ccf52b7225eecd0af4e33b310729726dc8f8bb14c217716"
-      url: "https://pub.dev"
-    source: hosted
-    version: "5.0.4"
   freezed_annotation:
     dependency: transitive
     description:
@@ -509,22 +501,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "0.2.1+1"
-  insta_assets_crop:
-    dependency: transitive
-    description:
-      name: insta_assets_crop
-      sha256: "0939bd618bdf6b7d6875411129017bf004b0e004f9bd7274c893374cf9b0aa9d"
-      url: "https://pub.dev"
-    source: hosted
-    version: "0.1.0"
-  insta_assets_picker:
-    dependency: "direct main"
-    description:
-      name: insta_assets_picker
-      sha256: bce889e5d93b886e60053b9d51bf75ec26e9a4178fac854053966007cf69887c
-      url: "https://pub.dev"
-    source: hosted
-    version: "3.1.0"
   intl:
     dependency: transitive
     description:

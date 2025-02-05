@@ -81,14 +81,28 @@ class _BodyPostState extends State<BodyPost>
       child: Stack(
         children: [
           Container(
-            height: 300,
             width: double.infinity,
+            clipBehavior: Clip.hardEdge,
             decoration: BoxDecoration(
               color: Colors.white,
             ),
-            child: ZoomingImage(
-              image: widget.post.image ??
-                  "http://167.71.92.176/media/profile_images/default_image.jpg",
+            child: FittedBox(
+              fit: BoxFit.scaleDown,
+              child: ConstrainedBox(
+                constraints: BoxConstraints(
+                  maxHeight: 300, // Set the maximum height
+                ),
+                child: SizedBox(
+                  width: 360.w,
+                  child: FittedBox(
+                    fit: BoxFit.cover,
+                    child: ZoomingImage(
+                      image: widget.post.image ??
+                          "http://167.71.92.176/media/profile_images/default_image.jpg",
+                    ),
+                  ),
+                ),
+              ),
             ),
           ),
           _heartSize > 0
