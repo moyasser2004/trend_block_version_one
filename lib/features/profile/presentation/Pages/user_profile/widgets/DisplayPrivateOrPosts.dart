@@ -10,6 +10,6 @@ class PrivateOrDiplayPosts extends StatelessWidget {
   Widget build(BuildContext context) {
     return (user.isPrivate && !user.isFollowed)
         ? PrivateWidget()
-        : PostsInUserBody();
+        : PostsInUserBody(userid: user.id);
   }
 }

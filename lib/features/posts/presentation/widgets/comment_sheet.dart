@@ -94,7 +94,7 @@ class _CommentSheetState extends State<CommentSheet> {
           ),
           Positioned(
             bottom: MediaQuery.of(context).viewInsets.bottom > 0
-                ? MediaQuery.of(context).viewInsets.bottom + 5
+                ? MediaQuery.of(context).viewInsets.bottom
                 : 0,
             left: 0,
             right: 0,
@@ -106,7 +106,7 @@ class _CommentSheetState extends State<CommentSheet> {
                     right: 1.w,
                     top: 8.h,
                     bottom:
-                        MediaQuery.of(context).viewInsets.bottom > 0 ? 0 : 8.h),
+                        MediaQuery.of(context).viewInsets.bottom > 0 ? 5 : 8.h),
                 child: Row(
                   children: [
                     GestureDetector(

@@ -50,33 +50,23 @@ class _ProfileInfoTileState extends State<ProfileInfoTile> {
         trailing: SizedBox(
           width: MediaQuery.of(context).size.width * 0.5,
           child: Row(
+            crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Spacer(),
               SizedBox(
                 width: MediaQuery.of(context).size.width * 0.4,
-                height: 60,
-                child: Row(
-                  children: [
-                    Spacer(),
-                    Align(
-                      alignment: Alignment.centerRight,
-                      child: SizedBox(
-                        width: MediaQuery.of(context).size.width * 0.3,
-                        child: Text(
-                          widget.property.isEmpty
-                              ? widget.userpro
-                              : widget.property,
-                          style: TextStyle(
-                            fontSize: 15,
-                            color: Colors.black,
-                            fontWeight: FontWeight.w400,
-                          ),
-                          maxLines: 1,
-                          overflow: TextOverflow.ellipsis,
-                        ),
-                      ),
+                child: Align(
+                  alignment: Alignment.centerRight,
+                  child: Text(
+                    widget.property.isEmpty ? widget.userpro : widget.property,
+                    maxLines: 1,
+                    overflow: TextOverflow.ellipsis,
+                    style: TextStyle(
+                      fontSize: 15,
+                      color: Colors.black,
+                      fontWeight: FontWeight.w400,
                     ),
-                  ],
+                  ),
                 ),
               ),
               SvgPicture.asset(

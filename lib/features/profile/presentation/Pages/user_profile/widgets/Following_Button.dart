@@ -16,7 +16,7 @@ class FollowingButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocConsumer<FollowingBloc, FollowingState>(
       listener: (context, state) {
-        print(state);
+      
       },
       builder: (context, state) {
         if (state is UnFollowingLoadding || state is FollowingLoadding) {

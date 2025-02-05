@@ -3,7 +3,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:trend/features/profile/presentation/Manager/Bloc_get_User/bloc_get.dart';
 import 'package:trend/features/profile/presentation/Manager/Bloc_get_User/states.getU.dart';
 import 'package:trend/features/profile/presentation/Manager/bloc/profile_bloc.dart';
-import 'package:trend/features/profile/presentation/Manager/bloc/profile_event.dart';
 import 'package:trend/features/profile/presentation/Manager/bloc/profile_state.dart';
 import 'package:trend/features/profile/presentation/Pages/my_profile/widgets/AnimatedAvatarWidget.dart';
 import 'package:trend/features/profile/presentation/Pages/user_profile/widgets/body_User_profile.dart';
@@ -22,10 +21,10 @@ class _UserProfileState extends State<UserProfile> {
   Widget build(BuildContext context) {
     return BlocConsumer<UserBloc, UserState>(
       listener: (context, state) {
-        if (state is UserLoadedState) {
-          BlocProvider.of<ProfileBloc>(context)
-              .add(getPostForUserevent(id: state.user.id));
-        }
+        // if (state is UserLoadedState) {
+        //   // BlocProvider.of<ProfileBloc>(context)
+        //   //     .add(getPostForUserevent(id: state.user.id));
+        // }
       },
       builder: (context, state) {
         if (state is UserLoadedState) {

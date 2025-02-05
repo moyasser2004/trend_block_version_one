@@ -57,7 +57,9 @@ class HeaderPost extends StatelessWidget {
                         int id = await SharedPreferencesDemo.getID();
                         if (id != post.authorId) {
                           BlocProvider.of<UserBloc>(context)
-                              .add(FetchUserEvent2(post.authorId ?? 0));
+                              .add(FetchUserEvent2(
+                            post.authorId ?? 0,
+                          ));
                           Navigator.pushNamed(context, AppRoutes.userProfile);
                         } else {
                           int c = await SharedPreferencesDemo.getID();

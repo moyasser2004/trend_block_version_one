@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:trend/features/profile/presentation/Manager/bloc/profile_bloc.dart';
 import 'package:trend/features/profile/presentation/Manager/bloc/profile_event.dart';
@@ -19,6 +20,13 @@ class Editbiopage extends StatefulWidget {
 class _EditbiopageState extends State<Editbiopage> {
   TextEditingController _controller = TextEditingController();
   String newbio = "";
+  bool isLoading = false;
+  void initState() {
+    super.initState();
+    // إضافة نص افتراضي
+    _controller.text = widget.bio;
+  }
+
   @override
   Widget build(BuildContext context) {
     return BlocListener<ProfileBloc, ProfileState>(
@@ -32,49 +40,59 @@ class _EditbiopageState extends State<Editbiopage> {
           Navigator.pop(context);
         }
       },
-      child: Scaffold(
-        backgroundColor: Colors.white,
-        appBar: AppBar(
-          backgroundColor: Colors.white,
-          title: Text("Edit bio"),
-          centerTitle: true,
-          actions: [
-            TextButton(
-              onPressed: () async {
-                if (newbio.isNotEmpty) {
-                  BlocProvider.of<ProfileBloc>(context)
-                      .add(Updatebio(widget.userid, newbio));
-                }
-              },
-              child: Text("Save"),
-            ),
-          ],
+      child: ModalProgressHUD(
+        inAsyncCall: isLoading, // عرض شاشة التحميل عند true
+        opacity: 0.5,
+        progressIndicator: CircularProgressIndicator(
+          color: Colors.black,
         ),
-        body: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 16.0),
-          child: TextField(
-            onChanged: (data) {
-              setState(() {
-                newbio = data;
-              });
-            },
-            maxLength: 80,
-            controller: _controller,
-            decoration: const InputDecoration(
-              filled: true,
-              fillColor: Color(0xffFAFAFA),
-              enabledBorder: OutlineInputBorder(
-                  borderSide: BorderSide(color: Color(0xffFAFAFA)),
-                  borderRadius: BorderRadius.all(Radius.circular(12))),
-              focusedBorder: OutlineInputBorder(
-                borderSide: BorderSide(color: Color(0xffFAFAFA)),
+        child: Scaffold(
+          backgroundColor: Colors.white,
+          appBar: AppBar(
+            backgroundColor: Colors.white,
+            title: Text("Edit bio"),
+            centerTitle: true,
+            actions: [
+              TextButton(
+                onPressed: () async {
+                  if (newbio.isNotEmpty) {
+                    BlocProvider.of<ProfileBloc>(context)
+                        .add(Updatebio(widget.userid, newbio));
+                    setState(() {
+                      isLoading = true;
+                    });
+                  }
+                },
+                child: Text("Save"),
               ),
-            ),
-            inputFormatters: [
-              LengthLimitingTextInputFormatter(80),
-              LineLimitInputFormatter(3),
             ],
-            maxLines: 3,
+          ),
+          body: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 16.0),
+            child: TextField(
+              onChanged: (data) {
+                setState(() {
+                  newbio = data;
+                });
+              },
+              maxLength: 80,
+              controller: _controller,
+              decoration: const InputDecoration(
+                filled: true,
+                fillColor: Color(0xffFAFAFA),
+                enabledBorder: OutlineInputBorder(
+                    borderSide: BorderSide(color: Color(0xffFAFAFA)),
+                    borderRadius: BorderRadius.all(Radius.circular(12))),
+                focusedBorder: OutlineInputBorder(
+                  borderSide: BorderSide(color: Color(0xffFAFAFA)),
+                ),
+              ),
+              inputFormatters: [
+                LengthLimitingTextInputFormatter(80),
+                LineLimitInputFormatter(3),
+              ],
+              maxLines: 3,
+            ),
           ),
         ),
       ),
