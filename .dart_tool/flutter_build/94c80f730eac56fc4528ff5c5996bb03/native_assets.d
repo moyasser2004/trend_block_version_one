@@ -1,0 +1,1 @@
+ C:\\Users\\Options\\Documents\\GitHub\\trend_block_version_one\\.dart_tool\\flutter_build\\94c80f730eac56fc4528ff5c5996bb03\\native_assets.yaml: 

@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:trend/features/profile/presentation/Manager/Bloc_get_User/bloc_get.dart';
+import 'package:trend/features/profile/presentation/Manager/Bloc_get_User/event_getU.dart';
 
 import '../../../../shared/const/colors.dart';
 import '../../../../shared/style/app_styles.dart';
 import '../../../../shared/utiles/routes.dart';
-import '../../../profile/presentation/Manager/Bloc_get_User/bloc_get.dart';
-import '../../../profile/presentation/Manager/Bloc_get_User/event_getU.dart';
 import '../../data/models/local/user_details_model.dart';
 
 class UserAccountDetails extends StatelessWidget {

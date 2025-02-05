@@ -80,6 +80,7 @@ class HeaderPost extends StatelessWidget {
                           imageBuilder: (context, imageProvider) =>
                               CircleAvatar(
                             radius: 16,
+                            backgroundColor: Colors.white,
                             backgroundImage: imageProvider, // الصورة المحمّلة
                           ),
                           placeholder: (context, url) => CircleAvatar(
@@ -175,7 +176,6 @@ class HeaderPost extends StatelessWidget {
                 ),
               ],
             ),
-            // Description (optional)
           ],
         ),
       ),

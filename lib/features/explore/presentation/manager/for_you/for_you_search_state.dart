@@ -5,7 +5,7 @@ import '../../../../../shared/core/enum.dart';
 import '../../../domain/entities/for_you_search.dart';
 
 class ForYouSearchState extends Equatable {
-  final PostSearch searchResult;
+  final PostSearch postSearchResult;
   final String searchMessage;
   final RequestStates PostRequestStatus;
 
@@ -14,8 +14,7 @@ class ForYouSearchState extends Equatable {
   final RequestStates userRequestStatus;
 
   ForYouSearchState({
-    this.searchResult = const PostSearch(
-        count: 0, next: "", previous: "", results: null),
+    this.postSearchResult = const PostSearch(count: null, next: '', previous: null, results: null),
     this.searchMessage = "",
     this.PostRequestStatus = RequestStates.empty,
     this.userSearch = const UserSearch(
@@ -33,7 +32,7 @@ class ForYouSearchState extends Equatable {
     RequestStates? userStatus,
   }) {
     return ForYouSearchState(
-      searchResult: searchResult ?? this.searchResult,
+      postSearchResult: searchResult ?? this.postSearchResult,
       searchMessage: searchMessage ?? this.searchMessage,
       PostRequestStatus: status ?? this.PostRequestStatus,
       userSearch: userSearch ?? this.userSearch,
@@ -44,7 +43,7 @@ class ForYouSearchState extends Equatable {
 
   @override
   List<Object?> get props => [
-        searchResult,
+        postSearchResult,
         searchMessage,
         PostRequestStatus,
         userSearch,

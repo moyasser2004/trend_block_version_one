@@ -5,8 +5,10 @@ import 'package:shimmer/shimmer.dart'; // For Instagram-like animation
 import '../../../../../shared/const/colors.dart';
 import '../../../../../shared/core/enum.dart';
 import '../../../data/models/local/explor_explore_post_container_model.dart';
+import '../../../domain/entities/for_you_search.dart';
 import '../../manager/for_you/for_you_search_bloc.dart';
 import '../../manager/for_you/for_you_search_state.dart';
+import '../../pages/user_search_posts.dart';
 import 'explore_explore_post_container.dart';
 
 class ExploreSearchForYouPost extends StatelessWidget {
@@ -54,7 +56,7 @@ class ExploreSearchForYouPost extends StatelessWidget {
   }
 
   Widget _buildLoadedGrid(ForYouSearchState state) {
-    final users = state.searchResult.results?.users ?? [];
+    final users = state.postSearchResult.results?.users ?? [];
 
     return SliverGrid.builder(
       itemCount: users.length,
@@ -64,15 +66,33 @@ class ExploreSearchForYouPost extends StatelessWidget {
         crossAxisCount: 3,
       ),
       itemBuilder: (context, index) {
-        final user = users[index];
+        final user = state.postSearchResult.results?.users[index];
 
-        final imageUrl = (user.recentPosts.isNotEmpty ?? false)
-            ? user.recentPosts.first.image ?? defaultImage
-            : defaultImage;
+        final randomImage = (user?.recentPosts.isNotEmpty == true)
+            ? user!.recentPosts.first.image
+            : null;
 
-        return ExploreExplorePostContainer(
-          model: ExplorExplorePostContainerModel(imgUrl: imageUrl),
-        );
+        final List<RecentPost>? userPosts =
+            state.postSearchResult.results?.users[index].recentPosts;
+
+        return InkWell(
+            child: ExploreExplorePostContainer(
+                model: ExplorExplorePostContainerModel(
+              imgUrl: randomImage ?? defaultImage,
+            )),
+            onTap: () {
+              if (userPosts == null || userPosts.isEmpty) {
+                return;
+              }
+              print("User clicked");
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => UserSearchPostsPage(
+                            posts: userPosts,
+                            search: "Posts",
+                          )));
+            });
       },
     );
   }

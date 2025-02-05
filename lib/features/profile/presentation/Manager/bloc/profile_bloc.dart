@@ -207,14 +207,15 @@ class ProfileBloc extends Bloc<ProfileEvent, ProfileState> {
     try {
       emit(UpdateLoading());
       String? tok = await token.getToken();
-
-      String? fileName;
+      print(tok);
+      print("token");
+      String fileName;
       fileName = path.basename(event.image.path);
-
+      print(fileName);
+      print("fileName");
       final data = {
-        "avatar": event.image != null
-            ? await MultipartFile.fromFile(event.image.path, filename: fileName)
-            : null,
+        "avatar":
+            await MultipartFile.fromFile(event.image.path, filename: fileName)
       };
       final response = await dio.put(
         "http://167.71.92.176/profile/${event.id}/",
@@ -223,10 +224,10 @@ class ProfileBloc extends Bloc<ProfileEvent, ProfileState> {
           headers: {'Authorization': 'Bearer $tok'},
         ),
       );
-
+      print(fileName);
+      print("fileName");
       if (response.statusCode == 200) {
-        emit(Updatesuccess(response.data["avatar"], response.data["bio"],
-            response.data["full_name"]));
+        emit(Updatesuccess(response.data["avatar"], "", ""));
       } else {
         emit(UpdateFailuer());
       }

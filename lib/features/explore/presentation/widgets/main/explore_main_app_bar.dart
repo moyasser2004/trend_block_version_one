@@ -36,7 +36,7 @@ class ExploreMainAppBarContainer extends StatelessWidget
               ));
         },
         child: Padding(
-          padding: EdgeInsets.symmetric(horizontal: 20, vertical: 11),
+          padding: EdgeInsets.symmetric(horizontal: 12, vertical: 11),
           child: Row(
             children: [
               // Back Button
@@ -57,10 +57,10 @@ class ExploreMainAppBarContainer extends StatelessWidget
                   ),
                 ),
               ),
-              SizedBox(width: 7),
+              SizedBox(width: 12),
               // Basic Container for Search (instead of TextFormField)
               Expanded(
-                flex: 8,
+                flex: 7,
                 child: Container(
                   padding: EdgeInsets.symmetric(horizontal: 10, vertical: 9),
                   decoration: BoxDecoration(

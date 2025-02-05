@@ -56,12 +56,14 @@ class _EditProfilePageState extends State<EditProfilePage> {
   Widget build(BuildContext context) {
     return BlocConsumer<ProfileBloc, ProfileState>(
       listener: (context, state) async {
+        print(
+            "${state}+++++++++++++++++++++++++++++++++++++++++++++++++++++++");
         if (state is Updatesuccess) {
           SharedPreferences sharedPreferences =
               await SharedPreferences.getInstance();
           await sharedPreferences.setString("avatar", state.avatar);
-          // await sharedPreferences.setString("bio", state.bio);
-          await sharedPreferences.setString("fullName", state.full_name);
+          // // await sharedPreferences.setString("bio", state.bio);
+          // await sharedPreferences.setString("fullName", state.full_name);
           BlocProvider.of<ProfileBloc>(context)
               .add(getPostForUserevent(id: widget.user.id));
           Navigator.pop(context);

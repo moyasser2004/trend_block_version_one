@@ -28,16 +28,17 @@ class _OnChangeSearchState extends State<OnChangeSearch> {
   late TextEditingController _searchController;
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
 
-  
   initState() {
     super.initState();
     _searchController = TextEditingController();
   }
-  
+
   void _onSearchChanged() {
-    context.read<ForYouSearchBloc>().add(
-          UserSearchEvent(_searchController.text.trim()),
-        );
+    if (_searchController.text.isNotEmpty) {
+      context.read<ForYouSearchBloc>().add(
+            UserSearchEvent(_searchController.text.trim()),
+          );
+    }
   }
 
   void _navigateToExploreSearch() {
@@ -48,13 +49,11 @@ class _OnChangeSearchState extends State<OnChangeSearch> {
           providers: [
             BlocProvider(
                 create: (_) => ForYouSearchBloc(
-                    searchExploreUseCase: sl(),
-                    userSearchUseCase: sl())),
+                    searchExploreUseCase: sl(), userSearchUseCase: sl())),
+            BlocProvider(create: (_) => HashtagsBloc(hashtagsUseCase: sl())),
             BlocProvider(
-                create: (_) => HashtagsBloc(hashtagsUseCase: sl())),
-            BlocProvider(
-                create: (_) => LocationSearchesBloc(
-                    locationSearchUseCase: sl())),
+                create: (_) =>
+                    LocationSearchesBloc(locationSearchUseCase: sl())),
           ],
           child: ExploreSearchPage(search: _searchController.text),
         ),
@@ -65,8 +64,7 @@ class _OnChangeSearchState extends State<OnChangeSearch> {
 
   OutlineInputBorder _buildOutlineInputBorder() => OutlineInputBorder(
         borderRadius: BorderRadius.circular(7),
-        borderSide:
-            const BorderSide(color: Color(AppColors.greyLight)),
+        borderSide: const BorderSide(color: Color(AppColors.greyLight)),
       );
 
   @override
@@ -74,8 +72,7 @@ class _OnChangeSearchState extends State<OnChangeSearch> {
     return Scaffold(
       backgroundColor: const Color(AppColors.white),
       appBar: _buildAppBar(),
-      body:
-          const CustomScrollView(slivers: [OnChangeSearchUserList()]),
+      body: const CustomScrollView(slivers: [OnChangeSearchUserList()]),
     );
   }
 
@@ -84,19 +81,23 @@ class _OnChangeSearchState extends State<OnChangeSearch> {
       preferredSize: const Size.fromHeight(kToolbarHeight),
       child: SafeArea(
         child: Padding(
-          padding: const EdgeInsets.symmetric(
-              horizontal: 17, vertical: 10),
+          padding: const EdgeInsets.symmetric(horizontal: 17, vertical: 10),
           child: Row(
             children: [
-              IconButton(
-                onPressed: () => Navigator.canPop(context)
-                    ? Navigator.pushNamed(context, AppRoutes.home)
-                    : null,
-                icon: const Icon(Icons.arrow_back_ios,
-                    size: 20, color: Color(AppColors.black)),
+              Flexible(
+                child: FittedBox(
+                  child: IconButton(
+                    onPressed: () => Navigator.canPop(context)
+                        ? Navigator.pushNamed(context, AppRoutes.home)
+                        : null,
+                    icon: const Icon(Icons.arrow_back_ios,
+                        size: 20, color: Color(AppColors.black)),
+                  ),
+                ),
               ),
-              const SizedBox(width: 7),
+              const SizedBox(width: 10),
               Expanded(
+                flex: 7,
                 child: Form(
                   key: _formKey,
                   child: TextFormField(
@@ -110,10 +111,10 @@ class _OnChangeSearchState extends State<OnChangeSearch> {
                       prefixIcon: const Icon(FontAwesomeIcons.search,
                           size: 16, color: Colors.black),
                       hintText: 'Search',
-                      hintStyle: AppStyles.styleNormal13.copyWith(
-                          color: const Color(AppColors.greyDark)),
-                      fillColor: const Color(AppColors.greyLighter)
-                          .withOpacity(0.2),
+                      hintStyle: AppStyles.styleNormal13
+                          .copyWith(color: const Color(AppColors.greyDark)),
+                      fillColor:
+                          const Color(AppColors.greyLighter).withOpacity(0.2),
                       filled: true,
                       border: _buildOutlineInputBorder(),
                       enabledBorder: _buildOutlineInputBorder(),
@@ -205,8 +206,7 @@ class OnChangeSearchUserList extends StatelessWidget {
 
   Widget _buildErrorMessage(String message) {
     return SliverToBoxAdapter(
-      child:
-          SizedBox(height: 200, child: Center(child: Text(message))),
+      child: SizedBox(height: 200, child: Center(child: Text(message))),
     );
   }
 }

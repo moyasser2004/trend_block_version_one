@@ -21,28 +21,33 @@ class ExploreRepository extends BaseExploreRepository {
       final result = await basePostDataSource.getAllPosts();
       return Right(result);
     } on ServerException catch (failure) {
-      return Left(ServerFailure(failure.errorServerModel.statusMessage));
+      return Left(
+          ServerFailure(failure.errorServerModel.statusMessage));
     }
   }
 
   @override
-  Future<Either<Failure, AllPostModel>> getAllPostsWithPageNumberExplore(
-      String url) async {
+  Future<Either<Failure, AllPostModel>>
+      getAllPostsWithPageNumberExplore(String url) async {
     try {
-      final result = await basePostDataSource.getPostWithPageNumber(url);
+      final result =
+          await basePostDataSource.getPostWithPageNumber(url);
       return Right(result);
     } on ServerException catch (failure) {
-      return Left(ServerFailure(failure.errorServerModel.statusMessage));
+      return Left(
+          ServerFailure(failure.errorServerModel.statusMessage));
     }
   }
 
   @override
-  Future<Either<Failure, PostSearchModel>> forYouSearch(String query) async {
+  Future<Either<Failure, PostSearchModel>> forYouSearch(
+      String query) async {
     try {
       final result = await basePostDataSource.forYouSearch(query);
       return Right(result);
     } on ServerException catch (failure) {
-      return Left(ServerFailure(failure.errorServerModel.statusMessage));
+      return Left(
+          ServerFailure(failure.errorServerModel.statusMessage));
     }
   }
 
@@ -53,17 +58,20 @@ class ExploreRepository extends BaseExploreRepository {
       final result = await basePostDataSource.HashtagsSearch(query);
       return Right(result);
     } on ServerException catch (failure) {
-      return Left(ServerFailure(failure.errorServerModel.statusMessage));
+      return Left(
+          ServerFailure(failure.errorServerModel.statusMessage));
     }
   }
 
   @override
-  Future<Either<Failure, UserSearchModel>> userSearch(String query) async {
+  Future<Either<Failure, UserSearchModel>> userSearch(
+      String query) async {
     try {
       final result = await basePostDataSource.UserSearch(query);
       return Right(result);
     } on ServerException catch (failure) {
-      return Left(ServerFailure(failure.errorServerModel.statusMessage));
+      return Left(
+          ServerFailure(failure.errorServerModel.statusMessage));
     }
   }
 
@@ -74,7 +82,8 @@ class ExploreRepository extends BaseExploreRepository {
       final result = await basePostDataSource.LocationSearch(query);
       return Right(result);
     } on ServerException catch (failure) {
-      return Left(ServerFailure(failure.errorServerModel.statusMessage));
+      return Left(
+          ServerFailure(failure.errorServerModel.statusMessage));
     }
   }
 }
