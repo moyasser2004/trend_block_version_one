@@ -9,7 +9,6 @@ import '../../manager/for_you/for_you_search_bloc.dart';
 import '../../manager/for_you/for_you_search_state.dart';
 import 'explore_explore_post_container.dart';
 
-
 class ExploreSearchForYouPost extends StatelessWidget {
   const ExploreSearchForYouPost({Key? key}) : super(key: key);
 
@@ -67,7 +66,7 @@ class ExploreSearchForYouPost extends StatelessWidget {
       itemBuilder: (context, index) {
         final user = users[index];
 
-        final imageUrl = (user.recentPosts?.isNotEmpty ?? false)
+        final imageUrl = (user.recentPosts.isNotEmpty ?? false)
             ? user.recentPosts.first.image ?? defaultImage
             : defaultImage;
 

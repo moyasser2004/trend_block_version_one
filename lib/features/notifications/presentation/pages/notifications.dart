@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:trend/features/notifications/presentation/Manager/NotificationBloc/notification_bloc.dart';
 import 'package:trend/features/notifications/presentation/pages/Widget/LotificationList.dart';
+import 'package:trend/features/profile/presentation/Pages/Followers/FollowersShimmer.dart';
 
 class Notifications extends StatefulWidget {
   const Notifications({super.key});
@@ -34,7 +35,7 @@ class _NotificationsState extends State<Notifications> {
       body: BlocConsumer<NotificationBloc, NotificationState>(
         builder: (context, state) {
           if (state is NotificationLoading) {
-            return const Center(child: CircularProgressIndicator());
+            return FollowersShimmer();
           } else if (state is NotificationLoaded) {
             if (state.notifications.isEmpty) {
               return const Center(child: Text('No notifications available.'));

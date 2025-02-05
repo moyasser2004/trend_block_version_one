@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 
-import '../const/colors.dart';
-
 abstract class AppStyles {
   static const TextStyle styleSemiBold21 = TextStyle(
     fontSize: 21,

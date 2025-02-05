@@ -14,7 +14,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   final String fullname;
   final String bio;
   final File? selectedImage;
-
+  final void Function() onPressed;
   const CustomAppBar({
     Key? key,
     required this.title,
@@ -22,6 +22,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
     required this.fullname,
     required this.bio,
     required this.selectedImage,
+    required this.onPressed,
   }) : super(key: key);
 
   @override
@@ -63,30 +64,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
             // TODO: implement listener
           },
           child: TextButton(
-            onPressed: () {
-              // ProfileHelper.saveProfile(
-              //     context, userId, fullname, bio, selectedImage);
-              if (fullname.isNotEmpty) {
-                BlocProvider.of<ProfileBloc>(context)
-                    .add(Updatefullname(userId, fullname));
-              }
-
-              if (bio.isNotEmpty) {
-                BlocProvider.of<ProfileBloc>(context)
-                    .add(Updatebio(userId, bio));
-              }
-
-              if (selectedImage != null) {
-                BlocProvider.of<ProfileBloc>(context)
-                    .add(UpdateAvatar(userId, selectedImage!));
-              }
-
-              ScaffoldMessenger.of(context).showSnackBar(
-                SnackBar(content: Text("Profile saved successfully!")),
-              );
-
-              Navigator.pop(context);
-            },
+            onPressed: onPressed,
             child: Text(
               "Save",
               style: TextStyle(
@@ -104,3 +82,22 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   @override
   Size get preferredSize => Size.fromHeight(kToolbarHeight);
 }
+/**() {
+              // ProfileHelper.saveProfile(
+              //     context, userId, fullname, bio, selectedImage);
+              // if (fullname.isNotEmpty) {
+              //   BlocProvider.of<ProfileBloc>(context)
+              //       .add(Updatefullname(userId, fullname));
+              // }
+
+              // if (bio.isNotEmpty) {
+              //   BlocProvider.of<ProfileBloc>(context)
+              //       .add(Updatebio(userId, bio));
+              // }
+
+              // ScaffoldMessenger.of(context).showSnackBar(
+              //   SnackBar(content: Text("Profile saved successfully!")),
+              // );
+
+              // Navigator.pop(context);
+            } */

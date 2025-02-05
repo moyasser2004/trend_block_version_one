@@ -6,6 +6,7 @@ import 'package:trend/features/add_post/presentation/new_post.dart';
 import 'package:trend/features/bottom_nav_bar/Bloc/Bottom_Nav_Bloc.dart';
 import 'package:trend/features/bottom_nav_bar/Bloc/Bottom_Nav_States.dart';
 import 'package:trend/features/bottom_nav_bar/Bloc/Bottom_Nav_event.dart';
+import 'package:trend/features/notifications/presentation/Manager/NotificationBloc/notification_bloc.dart';
 import 'package:trend/features/notifications/presentation/pages/notifications.dart';
 import 'package:trend/features/posts/presentation/Pages/home_page.dart';
 import 'package:trend/features/profile/presentation/Pages/my_profile/my_profile.dart';
@@ -100,6 +101,10 @@ class _MainScreenState extends State<MainScreen> {
       onTap: () async {
         BlocProvider.of<BottomNavBloc>(context)
             .add(BottomNavItemSelected(index));
+        if (index == 3) {
+          BlocProvider.of<NotificationBloc>(context)
+              .add(FetchNotificationsEvent());
+        }
         SharedPreferences sharedPreferences =
             await SharedPreferences.getInstance();
         int c = await int.parse(sharedPreferences.getString('id')!);

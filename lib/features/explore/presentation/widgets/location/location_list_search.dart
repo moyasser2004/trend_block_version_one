@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:skeletonizer/skeletonizer.dart';
 import 'package:trend/features/explore/data/models/local/location_details.dart';
 import 'package:trend/features/explore/presentation/manager/location/location_state.dart';
@@ -65,7 +64,7 @@ class LocationListSearch extends StatelessWidget {
   }
 
   Widget _buildLocationList(LocationSearchState state) {
-    final locations = state.searchResult?.results?.locations ?? [];
+    final locations = state.searchResult.results?.locations ?? [];
 
     return SliverList.builder(
       itemCount: locations.length,

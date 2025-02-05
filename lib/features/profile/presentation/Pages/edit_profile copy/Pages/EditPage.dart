@@ -1,10 +1,13 @@
 import 'dart:io';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
 import 'package:trend/features/profile/data/models/currentUser.dart';
+import 'package:trend/features/profile/presentation/Manager/bloc/profile_bloc.dart';
+import 'package:trend/features/profile/presentation/Manager/bloc/profile_event.dart';
 import 'package:trend/features/profile/presentation/Pages/edit_profile%20copy/Widget/Block_tile.dart';
 import 'package:trend/features/profile/presentation/Pages/edit_profile%20copy/Widget/CustomBioTile.dart';
 import 'package:trend/features/profile/presentation/Pages/edit_profile%20copy/Widget/Delete_tile.dart';
@@ -54,22 +57,31 @@ class _EditpageState extends State<Editpage> {
   bool isLoading = false;
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Colors.white,
-      appBar: CustomAppBar(
-        title: "Edit my profile",
-        userId: widget.user.id,
-        fullname: fullname,
-        bio: bio,
-        selectedImage: _selectedImage,
+    return ModalProgressHUD(
+      inAsyncCall: isLoading, // عرض شاشة التحميل عند true
+      opacity: 0.5,
+      progressIndicator: CircularProgressIndicator(
+        color: Colors.black,
       ),
-      body: ModalProgressHUD(
-        inAsyncCall: isLoading, // عرض شاشة التحميل عند true
-        opacity: 0.5,
-        progressIndicator: CircularProgressIndicator(
-          color: Colors.black,
+      child: Scaffold(
+        backgroundColor: Colors.white,
+        appBar: CustomAppBar(
+          title: "Edit my profile",
+          userId: widget.user.id,
+          fullname: fullname,
+          bio: bio,
+          selectedImage: _selectedImage,
+          onPressed: () {
+            if (_selectedImage != null) {
+              BlocProvider.of<ProfileBloc>(context)
+                  .add(UpdateAvatar(widget.user.id, _selectedImage!));
+            }
+            setState(() {
+              isLoading = true;
+            });
+          },
         ),
-        child: Column(
+        body: Column(
           children: [
             SizedBox(
               height: 20.sp,
@@ -109,8 +121,10 @@ class _EditpageState extends State<Editpage> {
                         fullname = '';
                       });
                     },
+                    userid: widget.user.id,
                   ),
                   CustomBioTile(
+                    userid: widget.user.id,
                     bio: bio, // Pass the current bio
                     onBioChanged: (newBio) {
                       setState(() {

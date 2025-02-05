@@ -1,5 +1,3 @@
-import 'package:device_preview/device_preview.dart';
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:photo_manager/photo_manager.dart';
@@ -8,16 +6,15 @@ import 'package:trend/shared/utiles/dependancy_injection.dart';
 import 'package:trend/shared/utiles/routes.dart';
 import 'package:trend/shared/utiles/services_local.dart';
 
-
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await DependancyInjection.dependancyInjection.initDependancies();
   ServiceLocator().init();
   PhotoManager.setIgnorePermissionCheck(false);
   runApp(
-      AppBlocProviders.getBlocProviders(
-        child: const MyApp(),
-      ),
+    AppBlocProviders.getBlocProviders(
+      child: const MyApp(),
+    ),
     // DevicePreview(
     //   enabled: !kReleaseMode,
     //   builder:
@@ -55,7 +52,3 @@ class MyApp extends StatelessWidget {
     );
   }
 }
-
-
-
-

@@ -28,7 +28,10 @@ class CommentsheetHeader extends StatelessWidget {
         ),
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
-          children: [Text("Comments "), Text("${commentcount}")],
+          children: [
+            Text("Comments "),
+            Text("${commentcount == "0" ? "" : commentcount}")
+          ],
         ),
         SizedBox(
           height: 5,

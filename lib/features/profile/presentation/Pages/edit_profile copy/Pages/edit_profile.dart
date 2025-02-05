@@ -60,7 +60,7 @@ class _EditProfilePageState extends State<EditProfilePage> {
           SharedPreferences sharedPreferences =
               await SharedPreferences.getInstance();
           await sharedPreferences.setString("avatar", state.avatar);
-          await sharedPreferences.setString("bio", state.bio);
+          // await sharedPreferences.setString("bio", state.bio);
           await sharedPreferences.setString("fullName", state.full_name);
           BlocProvider.of<ProfileBloc>(context)
               .add(getPostForUserevent(id: widget.user.id));

@@ -8,46 +8,55 @@ import 'package:trend/features/notifications/presentation/pages/Widget/ButtonsFo
 import 'package:trend/features/notifications/presentation/pages/Widget/actorandtime.dart';
 import 'package:trend/features/notifications/presentation/pages/Widget/notificatioVerb.dart';
 
-class Notificationcontent extends StatelessWidget {
+class Notificationcontent extends StatefulWidget {
   const Notificationcontent({super.key, required this.notification});
   final NotificationModel notification;
+
+  @override
+  State<Notificationcontent> createState() => _NotificationcontentState();
+}
+
+class _NotificationcontentState extends State<Notificationcontent> {
   @override
   Widget build(BuildContext context) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Actorandtime(
-          Actor: notification.actor,
-          createdAt: notification.createdAt,
+          Actor: widget.notification.actor,
+          createdAt: widget.notification.createdAt,
         ),
         Notificatioverb(
-          verb: notification.verb,
+          verb: widget.notification.verb,
         ),
         SizedBox(height: 5),
-        if (notification.verb.contains("following you"))
+        if (widget.notification.verb.contains("following you"))
           Row(
             children: [
-              GestureDetector(
-                onTap: () {
-                  BlocProvider.of<FollowingbackBloc>(context).add(
-                    FollowbackUserEvent(
-                        notification.id_actor, notification.id_actor),
-                  );
-                },
-                child: BlocBuilder<FollowingbackBloc, FollowingbackState>(
-                  builder: (context, state) {
-                    if (state is FollowingBackSuccess) {
-                      return Buttonsfollowing.buildFollowingButton();
-                    } else if (state is FollowingBackLoadding) {
-                      return Center(
-                        child: CircularProgressIndicator(
-                          color: Colors.black,
-                        ),
-                      );
-                    } else {
-                      return Buttonsfollowing.buildFollowBackButton();
-                    }
+              Visibility(
+                visible: !widget.notification.is_following,
+                child: GestureDetector(
+                  onTap: () {
+                    BlocProvider.of<FollowingbackBloc>(context).add(
+                      FollowbackUserEvent(widget.notification.id_actor,
+                          widget.notification.id_actor),
+                    );
                   },
+                  child: BlocBuilder<FollowingbackBloc, FollowingbackState>(
+                    builder: (context, state) {
+                      if (state is FollowingBackSuccess) {
+                        return Text("");
+                      } else if (state is FollowingBackLoadding) {
+                        return Center(
+                          child: CircularProgressIndicator(
+                            color: Colors.black,
+                          ),
+                        );
+                      } else {
+                        return Buttonsfollowing.buildFollowBackButton();
+                      }
+                    },
+                  ),
                 ),
               ),
               SizedBox(

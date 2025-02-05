@@ -4,11 +4,9 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import '../../../../../shared/const/colors.dart';
 import '../../../../../shared/style/app_styles.dart';
 import '../../../data/models/local/hashtags_details.dart';
-import 'package:intl/intl.dart';
 
 class HashtagsContainer extends StatelessWidget {
-  const HashtagsContainer({Key? key, required this.model})
-      : super(key: key);
+  const HashtagsContainer({Key? key, required this.model}) : super(key: key);
 
   final HashtagsDetailsModel model;
 
@@ -17,8 +15,7 @@ class HashtagsContainer extends StatelessWidget {
     return Container(
       color: Color(AppColors.white),
       child: ListTile(
-        contentPadding:
-            EdgeInsets.symmetric(horizontal: 13, vertical: 7),
+        contentPadding: EdgeInsets.symmetric(horizontal: 13, vertical: 7),
         leading: CircleAvatar(
           backgroundColor: Color(AppColors.greyLight),
           radius: 24,

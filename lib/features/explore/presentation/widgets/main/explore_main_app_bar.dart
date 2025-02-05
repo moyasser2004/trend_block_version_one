@@ -7,9 +7,6 @@ import 'package:trend/shared/utiles/routes.dart';
 import '../../../../../shared/const/colors.dart';
 import '../../../../../shared/utiles/services_local.dart';
 import '../../manager/for_you/for_you_search_bloc.dart';
-import '../../manager/hashtags/hashtags_bloc.dart';
-import '../../manager/location/location_bloc.dart';
-import '../../pages/explore_search.dart';
 import '../../pages/on_change_search.dart';
 
 class ExploreMainAppBarContainer extends StatelessWidget
@@ -24,27 +21,18 @@ class ExploreMainAppBarContainer extends StatelessWidget
     return SafeArea(
       child: InkWell(
         onTap: () {
-          
           Navigator.push(
               context,
               PageRouteBuilder(
-                pageBuilder: (context, animation,
-                    secondaryAnimation) => MultiBlocProvider(
-                  providers: [
-                    BlocProvider(
-                        create: (_) =>
-                            ForYouSearchBloc(
-                              searchExploreUseCase:
-                              sl(),
-                              userSearchUseCase:
-                              sl(),
-                            )),
-                  ],
-                  child: OnChangeSearch()
-                ),
-                transitionDuration: Duration(
-                    milliseconds:
-                    0), // No transition
+                pageBuilder: (context, animation, secondaryAnimation) =>
+                    MultiBlocProvider(providers: [
+                  BlocProvider(
+                      create: (_) => ForYouSearchBloc(
+                            searchExploreUseCase: sl(),
+                            userSearchUseCase: sl(),
+                          )),
+                ], child: OnChangeSearch()),
+                transitionDuration: Duration(milliseconds: 0), // No transition
               ));
         },
         child: Padding(
@@ -74,11 +62,9 @@ class ExploreMainAppBarContainer extends StatelessWidget
               Expanded(
                 flex: 8,
                 child: Container(
-                  padding: EdgeInsets.symmetric(
-                      horizontal: 10, vertical: 9),
+                  padding: EdgeInsets.symmetric(horizontal: 10, vertical: 9),
                   decoration: BoxDecoration(
-                    color:
-                        Color(AppColors.greyLighter).withOpacity(0.2),
+                    color: Color(AppColors.greyLighter).withOpacity(0.2),
                     borderRadius: BorderRadius.circular(7),
                   ),
                   child: Row(

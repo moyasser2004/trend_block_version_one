@@ -1,17 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:trend/features/profile/presentation/Pages/edit_profile%20copy/Widget/EditSheet.dart';
+import 'package:trend/features/profile/presentation/Pages/edit_profile%20copy/Pages/EditBioPage.dart';
 
 class CustomBioTile extends StatelessWidget {
   final String bio;
   final Function(String) onBioChanged;
   final String userBio;
-
+  final int userid;
   const CustomBioTile({
     Key? key,
     required this.bio,
     required this.onBioChanged,
     required this.userBio,
+    required this.userid,
   }) : super(key: key);
 
   @override
@@ -80,23 +81,13 @@ class CustomBioTile extends StatelessWidget {
           ),
         ),
         onTap: () async {
-          showModalBottomSheet(
-            context: context,
-            builder: (BuildContext context) {
-              return EditBottomSheet(
-                heightfactor: 0.5,
-                line: 3,
-                Lenght: 80,
-                onChanged: (newbio) {
-                  onBioChanged(newbio);
-                },
-                x: userBio,
-                onCancel: () {
-                  onBioChanged('');
-                },
-              );
-            },
-          );
+          Navigator.push(
+              context,
+              MaterialPageRoute(
+                  builder: (context) => Editbiopage(
+                        userid: userid,
+                        bio: userBio,
+                      )));
         },
       ),
     );
