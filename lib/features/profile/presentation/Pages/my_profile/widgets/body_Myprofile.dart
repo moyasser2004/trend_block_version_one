@@ -114,12 +114,14 @@ class _BodyForMyProfileState extends State<BodyForMyProfile> {
                             BlocProvider.of<DisplayFollowingBloc>(context)
                                 .add(LoadFollowing1(id: user.id));
                             Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) => FollowersScreen(
-                                          user: user,
-                                          index: 0,
-                                        )));
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => FollowersScreen(
+                                  user: user,
+                                  index: 0,
+                                ),
+                              ),
+                            );
                           },
                           child: CustomUserFeatureWighet(
                               number: user.followers, name: "Followers"),

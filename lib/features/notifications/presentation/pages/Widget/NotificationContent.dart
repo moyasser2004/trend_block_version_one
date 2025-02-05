@@ -45,7 +45,7 @@ class _NotificationcontentState extends State<Notificationcontent> {
                   child: BlocBuilder<FollowingbackBloc, FollowingbackState>(
                     builder: (context, state) {
                       if (state is FollowingBackSuccess) {
-                        return Text("");
+                        return Text(""); //add messanger button
                       } else if (state is FollowingBackLoadding) {
                         return Center(
                           child: CircularProgressIndicator(
