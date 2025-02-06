@@ -69,7 +69,7 @@ class _BodyForMyProfileState extends State<BodyForMyProfile> {
         child: Padding(
           padding: EdgeInsets.symmetric(vertical: 80.h),
           child: Column(
-            crossAxisAlignment: CrossAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Mynameandavatar(
                 onLongPress: widget.onLongPress,
