@@ -59,3 +59,5 @@ class Accountprivacy extends ProfileEvent {
   final int id;
   Accountprivacy({required this.private, required this.id});
 }
+
+class ResetProfileState extends ProfileEvent {}

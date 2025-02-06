@@ -1,1 +1,0 @@
-int style Ucrop_CropTheme 0x0

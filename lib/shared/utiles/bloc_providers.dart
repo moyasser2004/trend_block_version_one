@@ -13,6 +13,8 @@ import 'package:trend/features/notifications/presentation/Manager/NotificationBl
 import 'package:trend/features/posts/data/data_sources/data_remote_source.dart';
 import 'package:trend/features/posts/domain/repositories/post_repository_impl.dart';
 import 'package:trend/features/posts/domain/use_cases/get_posts.dart';
+import 'package:trend/features/profile/data/data_sources/Update_profile_remote_datasource2.dart';
+import 'package:trend/features/profile/domain/repositories/updateProfile.dart';
 import 'package:trend/features/profile/presentation/Manager/PostForSpecificUser/PostsForspecificUserBloc.dart';
 import 'package:trend/shared/utiles/dependancy_injection.dart';
 
@@ -42,6 +44,10 @@ class AppBlocProviders {
     final profileDataSource = ProfileRemoteDatasource(dio);
     final profileRepository = ProfileRepository(profileDataSource);
     final notificationRepository = NotificationRepository(dio: dio);
+
+    final UpdateProfileRepository updateProfileRepository =
+        UpdateProfileRepository(
+            remoteDataSource: updateProfileRemoteDataSource(dio: dio));
     final fetchNotificationsUseCase =
         FetchNotificationsUseCase(repository: notificationRepository);
 
@@ -89,7 +95,8 @@ class AppBlocProviders {
         ),
         // Profile Bloc: Handles fetching and managing user profile data.
         BlocProvider<ProfileBloc>(
-          create: (context) => ProfileBloc(profileRepository),
+          create: (context) =>
+              ProfileBloc(profileRepository, updateProfileRepository),
         ),
         //User
         BlocProvider<UserBloc>(

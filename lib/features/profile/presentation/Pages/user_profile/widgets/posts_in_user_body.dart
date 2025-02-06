@@ -15,14 +15,22 @@ class PostsInUserBody extends StatefulWidget {
 }
 
 class _PostsInUserBodyState extends State<PostsInUserBody> {
+  late ProfileBloc profileBloc;
   @override
   void initState() {
     super.initState();
     // إضافة الحدث في initState
     WidgetsBinding.instance.addPostFrameCallback((_) {
+      profileBloc = BlocProvider.of<ProfileBloc>(context);
       BlocProvider.of<ProfileBloc>(context)
           .add(getPostForUserevent(id: widget.userid));
     });
+  }
+
+  @override
+  void dispose() {
+    profileBloc.add(ResetProfileState());
+    super.dispose();
   }
 
   @override
@@ -60,7 +68,7 @@ class _PostsInUserBodyState extends State<PostsInUserBody> {
                 );
               },
             );
-          } else if (state is getPostForspecificUserLoading) {
+          } else
             return GridView.builder(
                 itemCount: 9,
                 padding: EdgeInsets.only(top: 10),
@@ -74,6 +82,7 @@ class _PostsInUserBodyState extends State<PostsInUserBody> {
                 itemBuilder: (context, index) => Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 2),
                       child: Skeletonizer.zone(
+                        enabled: true,
                         effect: ShimmerEffect(
                           duration: const Duration(milliseconds: 1500),
                           baseColor: Color(AppColors.greyLight),
@@ -91,11 +100,6 @@ class _PostsInUserBodyState extends State<PostsInUserBody> {
                         ),
                       ),
                     ));
-          } else {
-            return Center(
-              child: Text("No Post"),
-            );
-          }
         });
   }
 }

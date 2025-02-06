@@ -1,9 +1,9 @@
 import 'package:dio/dio.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:path/path.dart' as path;
 import 'package:trend/features/posts/data/models/post_model.dart';
 import 'package:trend/features/profile/data/models/profile_model.dart';
 import 'package:trend/features/profile/domain/repositories/profile_repository.dart';
+import 'package:trend/features/profile/domain/repositories/updateProfile.dart';
 import 'package:trend/shared/core/shared_preferences.dart';
 
 import '../../../../../shared/core/local/SharedPreferencesDemo.dart';
@@ -12,17 +12,20 @@ import 'profile_state.dart';
 
 class ProfileBloc extends Bloc<ProfileEvent, ProfileState> {
   final ProfileRepository repository;
+  final UpdateProfileRepository updateProfileRepository;
   final dio = Dio();
 
-  ProfileBloc(this.repository) : super(ProfileInitial()) {
+  ProfileBloc(this.repository, this.updateProfileRepository)
+      : super(ProfileInitial()) {
     on<FetchProfileEvent>(_onFetchProfile);
-    // on<FollowUserEvent>(_onFollowUser);
-    // on<UnfollowUserEvent>(_onUnfollowUser);
     on<getPostForUserevent>(_getPostForUserMethod);
     on<getBlockedUser>(_getBlockedUser);
     on<Logout>(_Logout);
     on<Delete>(_Delete);
     on<UpdateAvatar>(_UpdateAvatar);
+    on<ResetProfileState>((event, emit) {
+      emit(ProfileInitial());
+    });
     on<Updatebio>(_Updatebio);
     on<Updatefullname>(_Updatefullname);
     on<Accountprivacy>(_Accountprivacy);
@@ -66,7 +69,7 @@ class ProfileBloc extends Bloc<ProfileEvent, ProfileState> {
       for (var element in data) {
         posts.add(PostModel.fromJson(element));
       }
-
+      // var posts = await updateProfileRepository.getPostForUserMethod(event.id);
       emit(getPostForspecificUser(posts: posts));
     } catch (e) {
       if (e is DioException) {
@@ -84,19 +87,15 @@ class ProfileBloc extends Bloc<ProfileEvent, ProfileState> {
   ) async {
     try {
       emit(getBlockedUserLoading());
-      String? tok = await token.getToken();
-      print(tok);
-      final response = await dio.get(
-        "http://167.71.92.176/profile/blocked/",
-        options: Options(
-          headers: {'Authorization': 'Bearer $tok'},
-        ),
-      );
+      // String? tok = await token.getToken();
+      // final response = await dio.get(
+      //   "http://167.71.92.176/profile/blocked/",
+      //   options: Options(
+      //     headers: {'Authorization': 'Bearer $tok'},
+      //   ),
+      // );
 
-      List<ProfileModel> posts = [];
-      for (var element in response.data["results"]) {
-        posts.add(ProfileModel.fromJson(element));
-      }
+      List<ProfileModel> posts = await updateProfileRepository.getBlockedUser();
 
       emit(getBlockedUserLoaded(posts: posts));
     } catch (e) {
@@ -125,13 +124,7 @@ class ProfileBloc extends Bloc<ProfileEvent, ProfileState> {
   ) async {
     try {
       emit(DeleteLoading());
-      String? tok = await token.getToken();
-      final response = await dio.delete(
-        "http://167.71.92.176/auth/account/delete/",
-        options: Options(
-          headers: {'Authorization': 'Bearer $tok'},
-        ),
-      );
+      final response = await updateProfileRepository.delete();
 
       emit(Deletesuccess());
     } catch (e) {
@@ -145,22 +138,26 @@ class ProfileBloc extends Bloc<ProfileEvent, ProfileState> {
   ) async {
     try {
       emit(UpdateLoading());
-      String? tok = await token.getToken();
+      // String? tok = await token.getToken();
 
-      final data = {
-        "bio": event.bio,
-      };
-      final response = await dio.put(
-        "http://167.71.92.176/profile/${event.id}/",
-        data: FormData.fromMap(data),
-        options: Options(
-          headers: {'Authorization': 'Bearer $tok'},
-        ),
-      );
-
+      // final data = {
+      //   "bio": event.bio,
+      // };
+      // final response = await dio.put(
+      //   "http://167.71.92.176/profile/${event.id}/",
+      //   data: FormData.fromMap(data),
+      //   options: Options(
+      //     headers: {'Authorization': 'Bearer $tok'},
+      //   ),
+      // );
+      final response =
+          await updateProfileRepository.updateBio("${event.id}", event.bio!);
       if (response.statusCode == 200) {
-        emit(Updatesuccess(response.data["avatar"], response.data["bio"],
-            response.data["full_name"]));
+        emit(Updatesuccess(
+          response.data["avatar"],
+          response.data["bio"] ?? "",
+          response.data["full_name"] ?? "",
+        ));
       } else {
         emit(UpdateFailuer());
       }
@@ -176,21 +173,14 @@ class ProfileBloc extends Bloc<ProfileEvent, ProfileState> {
   ) async {
     try {
       emit(UpdateLoading());
-      String? tok = await token.getToken();
-      final data = {
-        "full_name": event.full_name.isEmpty ?? true ? null : event.full_name,
-      };
-      final response = await dio.put(
-        "http://167.71.92.176/profile/${event.id}/",
-        data: FormData.fromMap(data),
-        options: Options(
-          headers: {'Authorization': 'Bearer $tok'},
-        ),
-      );
-
+      final response = await updateProfileRepository.updatefullname(
+          "${event.id}", event.full_name);
       if (response.statusCode == 200) {
-        emit(Updatesuccess(response.data["avatar"], response.data["bio"],
-            response.data["full_name"]));
+        emit(Updatesuccess(
+          response.data["avatar"],
+          response.data["bio"] ?? "",
+          response.data["full_name"] ?? "",
+        ));
       } else {
         emit(UpdateFailuer());
       }
@@ -206,28 +196,31 @@ class ProfileBloc extends Bloc<ProfileEvent, ProfileState> {
   ) async {
     try {
       emit(UpdateLoading());
-      String? tok = await token.getToken();
-      print(tok);
-      print("token");
-      String fileName;
-      fileName = path.basename(event.image.path);
-      print(fileName);
-      print("fileName");
-      final data = {
-        "avatar":
-            await MultipartFile.fromFile(event.image.path, filename: fileName)
-      };
-      final response = await dio.put(
-        "http://167.71.92.176/profile/${event.id}/",
-        data: FormData.fromMap(data),
-        options: Options(
-          headers: {'Authorization': 'Bearer $tok'},
-        ),
-      );
-      print(fileName);
-      print("fileName");
+      // String? tok = await token.getToken();
+
+      // String fileName;
+      // fileName = path.basename(event.image.path);
+
+      // final data = {
+      //   "avatar":
+      //       await MultipartFile.fromFile(event.image.path, filename: fileName)
+      // };
+      // final response = await dio.put(
+      //   "http://167.71.92.176/profile/${event.id}/",
+      //   data: FormData.fromMap(data),
+      //   options: Options(
+      //     headers: {'Authorization': 'Bearer $tok'},
+      //   ),
+      // );
+      final response = await updateProfileRepository.updateAvatar(
+          "${event.id}", event.image);
+
       if (response.statusCode == 200) {
-        emit(Updatesuccess(response.data["avatar"], "", ""));
+        emit(Updatesuccess(
+          response.data["avatar"],
+          response.data["bio"] ?? "",
+          response.data["full_name"] ?? "",
+        ));
       } else {
         emit(UpdateFailuer());
       }

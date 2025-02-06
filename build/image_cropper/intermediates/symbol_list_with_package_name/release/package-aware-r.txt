@@ -1,2 +1,0 @@
-vn.hunghd.flutter.plugins.imagecropper
-style Ucrop_CropTheme
