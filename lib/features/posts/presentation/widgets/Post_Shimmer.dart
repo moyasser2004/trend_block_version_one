@@ -14,7 +14,6 @@ class ShimmerPost extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                // Profile and Name
                 Row(
                   children: [
                     // Profile Picture

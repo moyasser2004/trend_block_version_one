@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:shimmer/shimmer.dart';
 import 'package:trend/features/profile/data/models/profile_model.dart';
 import 'package:trend/features/profile/presentation/Manager/Bloc_Following/State_Following.dart';
 import 'package:trend/features/profile/presentation/Manager/Bloc_Following/bloc_folllowing.dart';
@@ -20,25 +19,9 @@ class FollowingButton extends StatelessWidget {
       builder: (context, state) {
         if (state is UnFollowingLoadding || state is FollowingLoadding) {
           return Center(
-            child: Shimmer.fromColors(
-              baseColor: Colors.grey.shade300, // لون الزر الأساسي
-              highlightColor: Colors.white, // لون التأثير اللامع
-              child: ElevatedButton(
-                onPressed: () {},
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.grey,
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(7.r),
-                  ), // اللون الأساسي للزر
-                  padding: EdgeInsets.symmetric(horizontal: 24, vertical: 12),
-                ),
-                child: Text(
-                  "Shimmer Button",
-                  style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
-                ),
-              ),
-            ),
-          );
+              child: CircularProgressIndicator(
+            color: Colors.black,
+          ));
         } else {
           bool x = user.isFollowed;
           return ElevatedButton(

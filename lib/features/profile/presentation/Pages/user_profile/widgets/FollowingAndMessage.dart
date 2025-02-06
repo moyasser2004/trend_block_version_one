@@ -15,10 +15,8 @@ class Followingandmessage extends StatelessWidget {
         Container(
           width: 145.w,
           height: 28.h,
-          child: Expanded(
-            child: FollowingButton(
-              user: user,
-            ),
+          child: FollowingButton(
+            user: user,
           ),
         ),
         SizedBox(width: 10.w),

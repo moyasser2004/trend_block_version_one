@@ -1,0 +1,20 @@
+{
+    "logs": [
+        {
+            "outputFile": "com.example.trend.app-mergeReleaseResources-44:/values-v35/values-v35.xml",
+            "map": [
+                {
+                    "source": "C:\\Users\\Options\\Documents\\GitHub\\trend_block_version_one\\build\\image_cropper\\intermediates\\packaged_res\\release\\values-v35\\values-v35.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endLines": "4",
+                        "endColumns": "12",
+                        "endOffsets": "216"
+                    }
+                }
+            ]
+        }
+    ]
+}

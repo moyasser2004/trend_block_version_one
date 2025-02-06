@@ -1,0 +1,281 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.example.trend"
+4    android:versionCode="1"
+5    android:versionName="1.0.0" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="21"
+9        android:targetSdkVersion="35" />
+10
+11    <uses-permission android:name="android.permission.INTERNET" />
+11-->C:\Users\Options\Documents\GitHub\trend_block_version_one\android\app\src\main\AndroidManifest.xml:2:5-67
+11-->C:\Users\Options\Documents\GitHub\trend_block_version_one\android\app\src\main\AndroidManifest.xml:2:22-64
+12    <uses-permission android:name="android.permission.CAMERA" />
+12-->C:\Users\Options\Documents\GitHub\trend_block_version_one\android\app\src\main\AndroidManifest.xml:3:5-65
+12-->C:\Users\Options\Documents\GitHub\trend_block_version_one\android\app\src\main\AndroidManifest.xml:3:22-62
+13    <uses-permission android:name="android.permission.READ_MEDIA_IMAGES" />
+13-->C:\Users\Options\Documents\GitHub\trend_block_version_one\android\app\src\main\AndroidManifest.xml:4:5-76
+13-->C:\Users\Options\Documents\GitHub\trend_block_version_one\android\app\src\main\AndroidManifest.xml:4:22-73
+14
+15    <!-- Required to query activities that can process text -->
+16    <queries>
+16-->C:\Users\Options\Documents\GitHub\trend_block_version_one\android\app\src\main\AndroidManifest.xml:44:5-49:15
+17        <intent>
+17-->C:\Users\Options\Documents\GitHub\trend_block_version_one\android\app\src\main\AndroidManifest.xml:45:9-48:18
+18            <action android:name="android.intent.action.PROCESS_TEXT" />
+18-->C:\Users\Options\Documents\GitHub\trend_block_version_one\android\app\src\main\AndroidManifest.xml:46:13-72
+18-->C:\Users\Options\Documents\GitHub\trend_block_version_one\android\app\src\main\AndroidManifest.xml:46:21-70
+19
+20            <data android:mimeType="text/plain" />
+20-->C:\Users\Options\Documents\GitHub\trend_block_version_one\android\app\src\main\AndroidManifest.xml:47:13-50
+20-->C:\Users\Options\Documents\GitHub\trend_block_version_one\android\app\src\main\AndroidManifest.xml:47:19-48
+21        </intent>
+22    </queries>
+23
+24    <uses-permission
+24-->[:photo_manager] C:\Users\Options\Documents\GitHub\trend_block_version_one\build\photo_manager\intermediates\merged_manifest\release\AndroidManifest.xml:7:5-9:38
+25        android:name="android.permission.READ_EXTERNAL_STORAGE"
+25-->[:photo_manager] C:\Users\Options\Documents\GitHub\trend_block_version_one\build\photo_manager\intermediates\merged_manifest\release\AndroidManifest.xml:8:9-64
+26        android:maxSdkVersion="32" />
+26-->[:photo_manager] C:\Users\Options\Documents\GitHub\trend_block_version_one\build\photo_manager\intermediates\merged_manifest\release\AndroidManifest.xml:9:9-35
+27    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+27-->[androidx.media3:media3-common:1.4.1] C:\Users\Options\.gradle\caches\transforms-3\ea763f08590e45b5a76c25471423bc7a\transformed\jetified-media3-common-1.4.1\AndroidManifest.xml:22:5-79
+27-->[androidx.media3:media3-common:1.4.1] C:\Users\Options\.gradle\caches\transforms-3\ea763f08590e45b5a76c25471423bc7a\transformed\jetified-media3-common-1.4.1\AndroidManifest.xml:22:22-76
+28
+29    <permission
+29-->[androidx.core:core:1.13.1] C:\Users\Options\.gradle\caches\transforms-3\889ae3adf7a24645889ee22f4dad2cac\transformed\core-1.13.1\AndroidManifest.xml:22:5-24:47
+30        android:name="com.example.trend.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
+30-->[androidx.core:core:1.13.1] C:\Users\Options\.gradle\caches\transforms-3\889ae3adf7a24645889ee22f4dad2cac\transformed\core-1.13.1\AndroidManifest.xml:23:9-81
+31        android:protectionLevel="signature" />
+31-->[androidx.core:core:1.13.1] C:\Users\Options\.gradle\caches\transforms-3\889ae3adf7a24645889ee22f4dad2cac\transformed\core-1.13.1\AndroidManifest.xml:24:9-44
+32
+33    <uses-permission android:name="com.example.trend.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
+33-->[androidx.core:core:1.13.1] C:\Users\Options\.gradle\caches\transforms-3\889ae3adf7a24645889ee22f4dad2cac\transformed\core-1.13.1\AndroidManifest.xml:26:5-97
+33-->[androidx.core:core:1.13.1] C:\Users\Options\.gradle\caches\transforms-3\889ae3adf7a24645889ee22f4dad2cac\transformed\core-1.13.1\AndroidManifest.xml:26:22-94
+34
+35    <application
+36        android:name="android.app.Application"
+36-->C:\Users\Options\Documents\GitHub\trend_block_version_one\android\app\src\main\AndroidManifest.xml:8:9-42
+37        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+37-->[androidx.core:core:1.13.1] C:\Users\Options\.gradle\caches\transforms-3\889ae3adf7a24645889ee22f4dad2cac\transformed\core-1.13.1\AndroidManifest.xml:28:18-86
+38        android:extractNativeLibs="true"
+39        android:icon="@mipmap/ic_launcher"
+39-->C:\Users\Options\Documents\GitHub\trend_block_version_one\android\app\src\main\AndroidManifest.xml:10:9-43
+40        android:label="trend"
+40-->C:\Users\Options\Documents\GitHub\trend_block_version_one\android\app\src\main\AndroidManifest.xml:7:9-30
+41        android:usesCleartextTraffic="true" >
+41-->C:\Users\Options\Documents\GitHub\trend_block_version_one\android\app\src\main\AndroidManifest.xml:9:9-44
+42        <activity
+42-->C:\Users\Options\Documents\GitHub\trend_block_version_one\android\app\src\main\AndroidManifest.xml:12:9-15:72
+43            android:name="com.yalantis.ucrop.UCropActivity"
+43-->C:\Users\Options\Documents\GitHub\trend_block_version_one\android\app\src\main\AndroidManifest.xml:13:13-60
+44            android:screenOrientation="portrait"
+44-->C:\Users\Options\Documents\GitHub\trend_block_version_one\android\app\src\main\AndroidManifest.xml:14:13-49
+45            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+45-->C:\Users\Options\Documents\GitHub\trend_block_version_one\android\app\src\main\AndroidManifest.xml:15:13-69
+46        <activity
+46-->C:\Users\Options\Documents\GitHub\trend_block_version_one\android\app\src\main\AndroidManifest.xml:17:9-34:20
+47            android:name="com.example.trend.MainActivity"
+47-->C:\Users\Options\Documents\GitHub\trend_block_version_one\android\app\src\main\AndroidManifest.xml:18:13-41
+48            android:configChanges="orientation|keyboardHidden|keyboard|screenSize|smallestScreenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode"
+48-->C:\Users\Options\Documents\GitHub\trend_block_version_one\android\app\src\main\AndroidManifest.xml:22:13-163
+49            android:exported="true"
+49-->C:\Users\Options\Documents\GitHub\trend_block_version_one\android\app\src\main\AndroidManifest.xml:19:13-36
+50            android:hardwareAccelerated="true"
+50-->C:\Users\Options\Documents\GitHub\trend_block_version_one\android\app\src\main\AndroidManifest.xml:23:13-47
+51            android:launchMode="singleTop"
+51-->C:\Users\Options\Documents\GitHub\trend_block_version_one\android\app\src\main\AndroidManifest.xml:20:13-43
+52            android:theme="@style/LaunchTheme"
+52-->C:\Users\Options\Documents\GitHub\trend_block_version_one\android\app\src\main\AndroidManifest.xml:21:13-47
+53            android:windowSoftInputMode="adjustResize" >
+53-->C:\Users\Options\Documents\GitHub\trend_block_version_one\android\app\src\main\AndroidManifest.xml:24:13-55
+54            <meta-data
+54-->C:\Users\Options\Documents\GitHub\trend_block_version_one\android\app\src\main\AndroidManifest.xml:26:13-28:57
+55                android:name="io.flutter.embedding.android.NormalTheme"
+55-->C:\Users\Options\Documents\GitHub\trend_block_version_one\android\app\src\main\AndroidManifest.xml:27:17-72
+56                android:resource="@style/NormalTheme" />
+56-->C:\Users\Options\Documents\GitHub\trend_block_version_one\android\app\src\main\AndroidManifest.xml:28:17-54
+57
+58            <intent-filter>
+58-->C:\Users\Options\Documents\GitHub\trend_block_version_one\android\app\src\main\AndroidManifest.xml:30:13-33:29
+59                <action android:name="android.intent.action.MAIN" />
+59-->C:\Users\Options\Documents\GitHub\trend_block_version_one\android\app\src\main\AndroidManifest.xml:31:17-68
+59-->C:\Users\Options\Documents\GitHub\trend_block_version_one\android\app\src\main\AndroidManifest.xml:31:25-66
+60
+61                <category android:name="android.intent.category.LAUNCHER" />
+61-->C:\Users\Options\Documents\GitHub\trend_block_version_one\android\app\src\main\AndroidManifest.xml:32:17-76
+61-->C:\Users\Options\Documents\GitHub\trend_block_version_one\android\app\src\main\AndroidManifest.xml:32:27-74
+62            </intent-filter>
+63        </activity>
+64
+65        <!--
+66             Don't delete the meta-data below.
+67             This is used by the Flutter tool to generate GeneratedPluginRegistrant.java
+68        -->
+69        <meta-data
+69-->C:\Users\Options\Documents\GitHub\trend_block_version_one\android\app\src\main\AndroidManifest.xml:38:9-40:33
+70            android:name="flutterEmbedding"
+70-->C:\Users\Options\Documents\GitHub\trend_block_version_one\android\app\src\main\AndroidManifest.xml:39:13-44
+71            android:value="2" />
+71-->C:\Users\Options\Documents\GitHub\trend_block_version_one\android\app\src\main\AndroidManifest.xml:40:13-30
+72
+73        <provider
+73-->[:image_picker_android] C:\Users\Options\Documents\GitHub\trend_block_version_one\build\image_picker_android\intermediates\merged_manifest\release\AndroidManifest.xml:9:9-17:20
+74            android:name="io.flutter.plugins.imagepicker.ImagePickerFileProvider"
+74-->[:image_picker_android] C:\Users\Options\Documents\GitHub\trend_block_version_one\build\image_picker_android\intermediates\merged_manifest\release\AndroidManifest.xml:10:13-82
+75            android:authorities="com.example.trend.flutter.image_provider"
+75-->[:image_picker_android] C:\Users\Options\Documents\GitHub\trend_block_version_one\build\image_picker_android\intermediates\merged_manifest\release\AndroidManifest.xml:11:13-74
+76            android:exported="false"
+76-->[:image_picker_android] C:\Users\Options\Documents\GitHub\trend_block_version_one\build\image_picker_android\intermediates\merged_manifest\release\AndroidManifest.xml:12:13-37
+77            android:grantUriPermissions="true" >
+77-->[:image_picker_android] C:\Users\Options\Documents\GitHub\trend_block_version_one\build\image_picker_android\intermediates\merged_manifest\release\AndroidManifest.xml:13:13-47
+78            <meta-data
+78-->[:image_picker_android] C:\Users\Options\Documents\GitHub\trend_block_version_one\build\image_picker_android\intermediates\merged_manifest\release\AndroidManifest.xml:14:13-16:75
+79                android:name="android.support.FILE_PROVIDER_PATHS"
+79-->[:image_picker_android] C:\Users\Options\Documents\GitHub\trend_block_version_one\build\image_picker_android\intermediates\merged_manifest\release\AndroidManifest.xml:15:17-67
+80                android:resource="@xml/flutter_image_picker_file_paths" />
+80-->[:image_picker_android] C:\Users\Options\Documents\GitHub\trend_block_version_one\build\image_picker_android\intermediates\merged_manifest\release\AndroidManifest.xml:16:17-72
+81        </provider> <!-- Trigger Google Play services to install the backported photo picker module. -->
+82        <service
+82-->[:image_picker_android] C:\Users\Options\Documents\GitHub\trend_block_version_one\build\image_picker_android\intermediates\merged_manifest\release\AndroidManifest.xml:19:9-31:19
+83            android:name="com.google.android.gms.metadata.ModuleDependencies"
+83-->[:image_picker_android] C:\Users\Options\Documents\GitHub\trend_block_version_one\build\image_picker_android\intermediates\merged_manifest\release\AndroidManifest.xml:20:13-78
+84            android:enabled="false"
+84-->[:image_picker_android] C:\Users\Options\Documents\GitHub\trend_block_version_one\build\image_picker_android\intermediates\merged_manifest\release\AndroidManifest.xml:21:13-36
+85            android:exported="false" >
+85-->[:image_picker_android] C:\Users\Options\Documents\GitHub\trend_block_version_one\build\image_picker_android\intermediates\merged_manifest\release\AndroidManifest.xml:22:13-37
+86            <intent-filter>
+86-->[:image_picker_android] C:\Users\Options\Documents\GitHub\trend_block_version_one\build\image_picker_android\intermediates\merged_manifest\release\AndroidManifest.xml:24:13-26:29
+87                <action android:name="com.google.android.gms.metadata.MODULE_DEPENDENCIES" />
+87-->[:image_picker_android] C:\Users\Options\Documents\GitHub\trend_block_version_one\build\image_picker_android\intermediates\merged_manifest\release\AndroidManifest.xml:25:17-94
+87-->[:image_picker_android] C:\Users\Options\Documents\GitHub\trend_block_version_one\build\image_picker_android\intermediates\merged_manifest\release\AndroidManifest.xml:25:25-91
+88            </intent-filter>
+89
+90            <meta-data
+90-->[:image_picker_android] C:\Users\Options\Documents\GitHub\trend_block_version_one\build\image_picker_android\intermediates\merged_manifest\release\AndroidManifest.xml:28:13-30:36
+91                android:name="photopicker_activity:0:required"
+91-->[:image_picker_android] C:\Users\Options\Documents\GitHub\trend_block_version_one\build\image_picker_android\intermediates\merged_manifest\release\AndroidManifest.xml:29:17-63
+92                android:value="" />
+92-->[:image_picker_android] C:\Users\Options\Documents\GitHub\trend_block_version_one\build\image_picker_android\intermediates\merged_manifest\release\AndroidManifest.xml:30:17-33
+93        </service>
+94        <!--
+95           Declares a provider which allows us to store files to share in
+96           '.../caches/share_plus' and grant the receiving action access
+97        -->
+98        <provider
+98-->[:share_plus] C:\Users\Options\Documents\GitHub\trend_block_version_one\build\share_plus\intermediates\merged_manifest\release\AndroidManifest.xml:13:9-21:20
+99            android:name="dev.fluttercommunity.plus.share.ShareFileProvider"
+99-->[:share_plus] C:\Users\Options\Documents\GitHub\trend_block_version_one\build\share_plus\intermediates\merged_manifest\release\AndroidManifest.xml:14:13-77
+100            android:authorities="com.example.trend.flutter.share_provider"
+100-->[:share_plus] C:\Users\Options\Documents\GitHub\trend_block_version_one\build\share_plus\intermediates\merged_manifest\release\AndroidManifest.xml:15:13-74
+101            android:exported="false"
+101-->[:share_plus] C:\Users\Options\Documents\GitHub\trend_block_version_one\build\share_plus\intermediates\merged_manifest\release\AndroidManifest.xml:16:13-37
+102            android:grantUriPermissions="true" >
+102-->[:share_plus] C:\Users\Options\Documents\GitHub\trend_block_version_one\build\share_plus\intermediates\merged_manifest\release\AndroidManifest.xml:17:13-47
+103            <meta-data
+103-->[:image_picker_android] C:\Users\Options\Documents\GitHub\trend_block_version_one\build\image_picker_android\intermediates\merged_manifest\release\AndroidManifest.xml:14:13-16:75
+104                android:name="android.support.FILE_PROVIDER_PATHS"
+104-->[:image_picker_android] C:\Users\Options\Documents\GitHub\trend_block_version_one\build\image_picker_android\intermediates\merged_manifest\release\AndroidManifest.xml:15:17-67
+105                android:resource="@xml/flutter_share_file_paths" />
+105-->[:image_picker_android] C:\Users\Options\Documents\GitHub\trend_block_version_one\build\image_picker_android\intermediates\merged_manifest\release\AndroidManifest.xml:16:17-72
+106        </provider>
+107        <!--
+108           This manifest declared broadcast receiver allows us to use an explicit
+109           Intent when creating a PendingItent to be informed of the user's choice
+110        -->
+111        <receiver
+111-->[:share_plus] C:\Users\Options\Documents\GitHub\trend_block_version_one\build\share_plus\intermediates\merged_manifest\release\AndroidManifest.xml:26:9-32:20
+112            android:name="dev.fluttercommunity.plus.share.SharePlusPendingIntent"
+112-->[:share_plus] C:\Users\Options\Documents\GitHub\trend_block_version_one\build\share_plus\intermediates\merged_manifest\release\AndroidManifest.xml:27:13-82
+113            android:exported="false" >
+113-->[:share_plus] C:\Users\Options\Documents\GitHub\trend_block_version_one\build\share_plus\intermediates\merged_manifest\release\AndroidManifest.xml:28:13-37
+114            <intent-filter>
+114-->[:share_plus] C:\Users\Options\Documents\GitHub\trend_block_version_one\build\share_plus\intermediates\merged_manifest\release\AndroidManifest.xml:29:13-31:29
+115                <action android:name="EXTRA_CHOSEN_COMPONENT" />
+115-->[:share_plus] C:\Users\Options\Documents\GitHub\trend_block_version_one\build\share_plus\intermediates\merged_manifest\release\AndroidManifest.xml:30:17-65
+115-->[:share_plus] C:\Users\Options\Documents\GitHub\trend_block_version_one\build\share_plus\intermediates\merged_manifest\release\AndroidManifest.xml:30:25-62
+116            </intent-filter>
+117        </receiver>
+118
+119        <provider
+119-->[androidx.emoji2:emoji2:1.2.0] C:\Users\Options\.gradle\caches\transforms-3\b54c8b34dc2cec64a7baaa02a8a7a5a3\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:24:9-32:20
+120            android:name="androidx.startup.InitializationProvider"
+120-->[androidx.emoji2:emoji2:1.2.0] C:\Users\Options\.gradle\caches\transforms-3\b54c8b34dc2cec64a7baaa02a8a7a5a3\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:25:13-67
+121            android:authorities="com.example.trend.androidx-startup"
+121-->[androidx.emoji2:emoji2:1.2.0] C:\Users\Options\.gradle\caches\transforms-3\b54c8b34dc2cec64a7baaa02a8a7a5a3\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:26:13-68
+122            android:exported="false" >
+122-->[androidx.emoji2:emoji2:1.2.0] C:\Users\Options\.gradle\caches\transforms-3\b54c8b34dc2cec64a7baaa02a8a7a5a3\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:27:13-37
+123            <meta-data
+123-->[androidx.emoji2:emoji2:1.2.0] C:\Users\Options\.gradle\caches\transforms-3\b54c8b34dc2cec64a7baaa02a8a7a5a3\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:29:13-31:52
+124                android:name="androidx.emoji2.text.EmojiCompatInitializer"
+124-->[androidx.emoji2:emoji2:1.2.0] C:\Users\Options\.gradle\caches\transforms-3\b54c8b34dc2cec64a7baaa02a8a7a5a3\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:30:17-75
+125                android:value="androidx.startup" />
+125-->[androidx.emoji2:emoji2:1.2.0] C:\Users\Options\.gradle\caches\transforms-3\b54c8b34dc2cec64a7baaa02a8a7a5a3\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:31:17-49
+126            <meta-data
+126-->[androidx.lifecycle:lifecycle-process:2.7.0] C:\Users\Options\.gradle\caches\transforms-3\40a1bd5ff2ce65cd1fad055cc690d356\transformed\jetified-lifecycle-process-2.7.0\AndroidManifest.xml:29:13-31:52
+127                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+127-->[androidx.lifecycle:lifecycle-process:2.7.0] C:\Users\Options\.gradle\caches\transforms-3\40a1bd5ff2ce65cd1fad055cc690d356\transformed\jetified-lifecycle-process-2.7.0\AndroidManifest.xml:30:17-78
+128                android:value="androidx.startup" />
+128-->[androidx.lifecycle:lifecycle-process:2.7.0] C:\Users\Options\.gradle\caches\transforms-3\40a1bd5ff2ce65cd1fad055cc690d356\transformed\jetified-lifecycle-process-2.7.0\AndroidManifest.xml:31:17-49
+129            <meta-data
+129-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Options\.gradle\caches\transforms-3\408a642162969e960684d9c16b2f116a\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:29:13-31:52
+130                android:name="androidx.profileinstaller.ProfileInstallerInitializer"
+130-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Options\.gradle\caches\transforms-3\408a642162969e960684d9c16b2f116a\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:30:17-85
+131                android:value="androidx.startup" />
+131-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Options\.gradle\caches\transforms-3\408a642162969e960684d9c16b2f116a\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:31:17-49
+132        </provider>
+133
+134        <uses-library
+134-->[androidx.window:window:1.2.0] C:\Users\Options\.gradle\caches\transforms-3\8859fd2468ade3ef2655d1f63d6737f2\transformed\jetified-window-1.2.0\AndroidManifest.xml:23:9-25:40
+135            android:name="androidx.window.extensions"
+135-->[androidx.window:window:1.2.0] C:\Users\Options\.gradle\caches\transforms-3\8859fd2468ade3ef2655d1f63d6737f2\transformed\jetified-window-1.2.0\AndroidManifest.xml:24:13-54
+136            android:required="false" />
+136-->[androidx.window:window:1.2.0] C:\Users\Options\.gradle\caches\transforms-3\8859fd2468ade3ef2655d1f63d6737f2\transformed\jetified-window-1.2.0\AndroidManifest.xml:25:13-37
+137        <uses-library
+137-->[androidx.window:window:1.2.0] C:\Users\Options\.gradle\caches\transforms-3\8859fd2468ade3ef2655d1f63d6737f2\transformed\jetified-window-1.2.0\AndroidManifest.xml:26:9-28:40
+138            android:name="androidx.window.sidecar"
+138-->[androidx.window:window:1.2.0] C:\Users\Options\.gradle\caches\transforms-3\8859fd2468ade3ef2655d1f63d6737f2\transformed\jetified-window-1.2.0\AndroidManifest.xml:27:13-51
+139            android:required="false" />
+139-->[androidx.window:window:1.2.0] C:\Users\Options\.gradle\caches\transforms-3\8859fd2468ade3ef2655d1f63d6737f2\transformed\jetified-window-1.2.0\AndroidManifest.xml:28:13-37
+140
+141        <receiver
+141-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Options\.gradle\caches\transforms-3\408a642162969e960684d9c16b2f116a\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:34:9-52:20
+142            android:name="androidx.profileinstaller.ProfileInstallReceiver"
+142-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Options\.gradle\caches\transforms-3\408a642162969e960684d9c16b2f116a\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:35:13-76
+143            android:directBootAware="false"
+143-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Options\.gradle\caches\transforms-3\408a642162969e960684d9c16b2f116a\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:36:13-44
+144            android:enabled="true"
+144-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Options\.gradle\caches\transforms-3\408a642162969e960684d9c16b2f116a\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:37:13-35
+145            android:exported="true"
+145-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Options\.gradle\caches\transforms-3\408a642162969e960684d9c16b2f116a\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:38:13-36
+146            android:permission="android.permission.DUMP" >
+146-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Options\.gradle\caches\transforms-3\408a642162969e960684d9c16b2f116a\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:39:13-57
+147            <intent-filter>
+147-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Options\.gradle\caches\transforms-3\408a642162969e960684d9c16b2f116a\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:40:13-42:29
+148                <action android:name="androidx.profileinstaller.action.INSTALL_PROFILE" />
+148-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Options\.gradle\caches\transforms-3\408a642162969e960684d9c16b2f116a\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:41:17-91
+148-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Options\.gradle\caches\transforms-3\408a642162969e960684d9c16b2f116a\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:41:25-88
+149            </intent-filter>
+150            <intent-filter>
+150-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Options\.gradle\caches\transforms-3\408a642162969e960684d9c16b2f116a\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:43:13-45:29
+151                <action android:name="androidx.profileinstaller.action.SKIP_FILE" />
+151-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Options\.gradle\caches\transforms-3\408a642162969e960684d9c16b2f116a\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:44:17-85
+151-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Options\.gradle\caches\transforms-3\408a642162969e960684d9c16b2f116a\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:44:25-82
+152            </intent-filter>
+153            <intent-filter>
+153-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Options\.gradle\caches\transforms-3\408a642162969e960684d9c16b2f116a\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:46:13-48:29
+154                <action android:name="androidx.profileinstaller.action.SAVE_PROFILE" />
+154-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Options\.gradle\caches\transforms-3\408a642162969e960684d9c16b2f116a\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:47:17-88
+154-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Options\.gradle\caches\transforms-3\408a642162969e960684d9c16b2f116a\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:47:25-85
+155            </intent-filter>
+156            <intent-filter>
+156-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Options\.gradle\caches\transforms-3\408a642162969e960684d9c16b2f116a\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:49:13-51:29
+157                <action android:name="androidx.profileinstaller.action.BENCHMARK_OPERATION" />
+157-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Options\.gradle\caches\transforms-3\408a642162969e960684d9c16b2f116a\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:50:17-95
+157-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Options\.gradle\caches\transforms-3\408a642162969e960684d9c16b2f116a\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:50:25-92
+158            </intent-filter>
+159        </receiver>
+160    </application>
+161
+162</manifest>
